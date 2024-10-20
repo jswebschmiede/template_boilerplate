@@ -1,0 +1,11 @@
+.card {
+  @apply bg-white relative flex flex-col bg-clip-border min-w-0 rounded-lg border border-gray-200;
+}
+
+.card-body {
+  @apply flex-auto p-4;
+}
+
+.card-body p {
+  @apply m-0;
+}

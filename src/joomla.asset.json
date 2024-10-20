@@ -1,0 +1,25 @@
+{
+    "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+    "name": "template_boilerplate",
+    "version": "4.0.0",
+    "description": "This file contains details of the assets used by Template Boilerplate",
+    "license": "GPL-2.0-or-later",
+    "assets": [
+        {
+            "name": "template.boilerplate.site",
+            "type": "script",
+            "uri": "site.bundle.js",
+            "dependencies": ["core"],
+            "attributes": {
+                "defer": true
+            },
+            "version": "1.0.0"
+        },
+        {
+            "name": "template.boilerplate.site",
+            "type": "style",
+            "uri": "site.min.css",
+            "version": "1.0.0"
+        }
+    ]
+}

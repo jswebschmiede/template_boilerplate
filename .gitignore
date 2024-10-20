@@ -1,0 +1,30 @@
+# IDE & System Related Files
+.buildpath
+.project
+.settings
+.DS_Store
+.idea
+.vscode
+.docker
+/docker-compose.yml
+/nbproject
+php.ini
+cli
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# JS/CSS Build
+node_modules
+/build/assets_tmp
+/scss-lint-report.xml
+pnpm-lock.yaml
+*.map
+dist
+todos.txt

@@ -1,0 +1,11 @@
+/* Sticky Header */
+.f-header--sticky {
+  @apply transition-all;
+}
+.f-header--sticky.is-sticky {
+  --f-header-height: 70px;
+  @apply fixed top-0 shadow-md z-30 animate-slide-down;
+}
+.f-header--sticky.is-sticky .f-header__logo {
+  @apply w-[--f-header-logo-width] lg:w-[190px];
+}

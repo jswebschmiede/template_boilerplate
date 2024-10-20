@@ -1,0 +1,38 @@
+{
+    "name": "template_boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack --mode development --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.25.2",
+        "@babel/preset-env": "^7.25.4",
+        "@tailwindcss/forms": "^0.5.9",
+        "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
+        "@tailwindcss/typography": "^0.5.15",
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "autoprefixer": "^10.4.20",
+        "babel-loader": "^9.2.1",
+        "chalk": "4",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^12.0.2",
+        "css-loader": "^7.1.2",
+        "css-minimizer-webpack-plugin": "^7.0.0",
+        "log-symbols": "^4.1.0",
+        "mini-css-extract-plugin": "^2.9.1",
+        "postcss": "^8.4.47",
+        "postcss-loader": "^8.1.1",
+        "postcss-import": "^16.1.0",
+        "postcss-import-ext-glob": "^2.1.1",
+        "tailwindcss": "^3.4.12",
+        "tailwind-scrollbar": "^3.1.0",
+        "webpack": "^5.94.0",
+        "webpack-cli": "^5.1.4",
+        "zip-webpack-plugin": "^4.0.1"
+    }
+}

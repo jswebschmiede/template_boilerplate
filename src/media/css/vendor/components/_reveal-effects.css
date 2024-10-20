@@ -1,0 +1,154 @@
+/* --------------------------------
+
+File#: _1_reveal-effects
+Title: Reveal Effects
+Descr: A collection of reveal effects targeting specific elements as they enter the viewport
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+  --reveal-fx-duration: 0.6s;
+  --reveal-fx-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.reveal-fx {
+  opacity: 0;
+  transition:
+    opacity,
+    -webkit-transform var(--reveal-fx-timing-function);
+  transition:
+    opacity,
+    transform var(--reveal-fx-timing-function);
+  transition:
+    opacity,
+    transform var(--reveal-fx-timing-function),
+    -webkit-transform var(--reveal-fx-timing-function);
+  transition-duration: var(--reveal-fx-duration);
+}
+.reveal-fx::before {
+  display: none;
+  content: "reveal-fx";
+}
+.reveal-fx--translate,
+.reveal-fx--translate-up {
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+}
+.reveal-fx--translate-right {
+  -webkit-transform: translateX(-50px);
+  transform: translateX(-50px);
+}
+.reveal-fx--translate-left {
+  -webkit-transform: translateX(50px);
+  transform: translateX(50px);
+}
+.reveal-fx--translate-down {
+  -webkit-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+.reveal-fx--scale {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.reveal-fx--scale-up {
+  -webkit-transform: translateY(50px) scale(0.8);
+  transform: translateY(50px) scale(0.8);
+}
+.reveal-fx--scale-right {
+  -webkit-transform: translateX(-50px) scale(0.8);
+  transform: translateX(-50px) scale(0.8);
+}
+.reveal-fx--scale-left {
+  -webkit-transform: translateX(50px) scale(0.8);
+  transform: translateX(50px) scale(0.8);
+}
+.reveal-fx--scale-down {
+  -webkit-transform: translateY(-50px) scale(0.8);
+  transform: translateY(-50px) scale(0.8);
+}
+.reveal-fx--rotate,
+.reveal-fx--rotate-down,
+.reveal-fx--rotate-right,
+.reveal-fx--rotate-left,
+.reveal-fx--rotate-up {
+  perspective: 1000px;
+}
+.reveal-fx--rotate > *,
+.reveal-fx--rotate-down > *,
+.reveal-fx--rotate-right > *,
+.reveal-fx--rotate-left > *,
+.reveal-fx--rotate-up > * {
+  transition: -webkit-transform var(--reveal-fx-duration)
+    var(--reveal-fx-timing-function);
+  transition: transform var(--reveal-fx-duration)
+    var(--reveal-fx-timing-function);
+  transition:
+    transform var(--reveal-fx-duration) var(--reveal-fx-timing-function),
+    -webkit-transform var(--reveal-fx-duration) var(--reveal-fx-timing-function);
+  backface-visibility: hidden;
+}
+.reveal-fx--rotate > *,
+.reveal-fx--rotate-down > * {
+  transform-origin: top;
+  transform: rotateX(-45deg);
+}
+.reveal-fx--rotate-right > * {
+  transform-origin: left center;
+  transform: rotateY(45deg);
+}
+.reveal-fx--rotate-left > * {
+  transform-origin: right center;
+  transform: rotateY(-45deg);
+}
+.reveal-fx--rotate-up > * {
+  transform-origin: bottom;
+  transform: rotateX(45deg);
+}
+.reveal-fx--text-mask {
+  overflow: hidden;
+}
+.reveal-fx--text-mask > * {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform var(--reveal-fx-duration)
+    var(--reveal-fx-timing-function);
+  will-change: transform;
+}
+[class*="reveal-fx--translate"],
+[class*="reveal-fx--scale"] {
+  will-change: opacity, transform;
+}
+.reveal-fx--text-mask > *,
+[class*="reveal-fx--rotate"] > * {
+  will-change: transform;
+}
+.reveal-fx--clip-x > *,
+.reveal-fx--clip-y > * {
+  transition:
+    opacity,
+    clip-path cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-duration: var(--reveal-fx-duration);
+}
+.reveal-fx--clip-x > * {
+  -webkit-clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%);
+  clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%);
+}
+.reveal-fx--clip-y > * {
+  -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+.reveal-fx--is-visible {
+  opacity: 1;
+}
+.reveal-fx--is-visible[class*="reveal-fx--translate"],
+.reveal-fx--is-visible[class*="reveal-fx--scale"],
+.reveal-fx--is-visible[class*="reveal-fx--rotate"] > *,
+.reveal-fx--is-visible.reveal-fx--text-mask > * {
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+.reveal-fx--is-visible.reveal-fx--clip-x > *,
+.reveal-fx--is-visible.reveal-fx--clip-y > * {
+  opacity: 1;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
