@@ -39,7 +39,7 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
     ?>">
 
         <?php if ($templateparams["pagePreloader"] == 1): ?>
-            <?php echo LayoutHelper::render('tempalte.preloader'); ?>
+            <?php echo LayoutHelper::render('template.preloader'); ?>
         <?php endif; ?>
 
         <?php echo LayoutHelper::render('template.header', [
