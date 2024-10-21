@@ -10,10 +10,14 @@
  */
 
 defined('_JEXEC') or die;
+
+use Joomla\CMS\Language\Text;
 ?>
 
 <div class='progress-wrap fixed bottom-5 right-5 2xl:right-12 bg-white h-[3rem] w-[3rem] opacity-0 translate-y-[5px] invisible
-        rounded-[9999px] flex items-center justify-center transition-all z-40 cursor-pointer'>
+        rounded-[9999px] flex items-center justify-center transition-all z-40 cursor-pointer'
+    aria-label='<?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_BACKTOTOP_LABEL"); ?>'
+    title='<?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_BACKTOTOP"); ?>'>
     <svg class='svg-content' width='100%' height='100%' viewBox='-1 -1 102 102'>
         <path class="stroke-primary-500 box-border transition-all stroke-[5px]" fill='none'
             d='M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98'
