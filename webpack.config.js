@@ -8,8 +8,12 @@ const chalk = require('chalk');
 const logSymbols = require('log-symbols');
 const fs = require('fs');
 const rimraf = require('rimraf');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 let lastPercentage = 0;
+
+// Change this to your Joomla URL
+const siteUrl = 'http://127.0.0.1:6969/';
 
 const progressHandler = (percentage, message) => {
     // Round to 2 decimal places
@@ -187,7 +191,24 @@ module.exports = (env, argv) => {
                           },
                       }),
                   ]
-                : []),
+                : [
+                      new BrowserSyncPlugin(
+                          {
+                              proxy: siteUrl,
+                              files: [
+                                  'dist/**/*.php',
+                                  'dist/**/*.js',
+                                  'dist/**/*.css',
+                                  'dist/**/*.html',
+                              ],
+                              reloadDelay: 0,
+                              open: false,
+                          },
+                          {
+                              reload: false,
+                          },
+                      ),
+                  ]),
         ],
         optimization: {
             minimizer: [
