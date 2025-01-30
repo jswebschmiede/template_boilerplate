@@ -157,11 +157,16 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.css$/,
-                    use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
-                },
-                {
-                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                    type: 'asset/inline',
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                url: false,
+                            },
+                        },
+                        'postcss-loader',
+                    ],
                 },
             ],
         },
@@ -195,6 +200,10 @@ module.exports = (env, argv) => {
                       new BrowserSyncPlugin(
                           {
                               proxy: siteUrl,
+                              port: 3000,
+                              ui: {
+                                  port: 3001,
+                              },
                               files: [
                                   'dist/**/*.php',
                                   'dist/**/*.js',
