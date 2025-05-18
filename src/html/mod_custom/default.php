@@ -14,7 +14,5 @@ $modId = 'mod-custom' . $module->id;
 ?>
 
 <div id="<?php echo $modId; ?>" class="mod-custom custom">
-    <div class="prose lg:prose-lg">
-        <?php echo $module->content; ?>
-    </div>
+    <?php echo $module->content; ?>
 </div>

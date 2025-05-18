@@ -7,70 +7,70 @@ Usage: codyhouse.co/license
 
 -------------------------------- */
 :root {
-  --f-header-height: 50px;
-  --f-header-logo-width: 140px;
+    --f-header-height: 50px;
+    --f-header-logo-width: 140px;
 }
 @screen lg {
-  :root {
-    --f-header-height: 90px;
-    --f-header-logo-width: 160px;
-  }
+    :root {
+        --f-header-height: 90px;
+        --f-header-logo-width: 160px;
+    }
 }
 
 .f-header::before {
-  /* used in JS to detect menu style */
-  @apply content-["mobile"] hidden;
+    /* used in JS to detect menu style */
+    @apply content-["mobile"] hidden;
 }
 
 .f-header--expanded {
-  /* class added when navigation is visible - small devices only */
+    /* class added when navigation is visible - small devices only */
 }
 
 .f-header__mobile-content {
-  @apply relative flex h-full justify-between items-center z-[2];
-  /* logo + menu button on small devices */
+    @apply relative flex h-full justify-between items-center z-[2];
+    /* logo + menu button on small devices */
 }
 
 .f-header__logo {
-  @apply block w-[--f-header-logo-width] shrink-0 no-underline;
+    @apply block w-(--f-header-logo-width) shrink-0 no-underline;
 }
 
 .f-header__nav-control {
-  /* menu button */
-  --anim-menu-btn-size: 40px;
-  /* 🍔 icon */
-  --anim-menu-btn-icon-size: 28px;
-  --anim-menu-btn-icon-stroke: 2px;
+    /* menu button */
+    --anim-menu-btn-size: 40px;
+    /* 🍔 icon */
+    --anim-menu-btn-icon-size: 28px;
+    --anim-menu-btn-icon-stroke: 2px;
 }
 
 .f-header__nav {
-  @apply absolute w-full max-h-[calc(100vh_-_var(--f-header-offset,0px))] overflow-auto overscroll-contain z-[1] invisible opacity-0 translate-y-[-1em] left-0 top-0 pt-0 px-0 pb-5 lg:pb-8 bg-white first-line:shadow-md;
+    @apply absolute w-full max-h-[calc(100vh_-_var(--f-header-offset,0px))] overflow-auto overscroll-contain z-[1] invisible opacity-0 translate-y-[-1em] left-0 top-0 pt-0 px-0 pb-5 lg:pb-8 bg-white first-line:shadow-md;
 }
 .f-header__nav::before {
-  /* top header bg + border */
-  @apply content-[""] block sticky h-[var(--f-header-height)] bg-inherit top-0 border-b border-gray-300;
+    /* top header bg + border */
+    @apply content-[""] block sticky h-(--f-header-height) bg-inherit top-0 border-b border-gray-300;
 }
 
 .f-header__nav--is-visible {
-  @apply visible opacity-100 translate-y-0 [transition:visibility_0s,opacity_0.3s,-webkit-transform_0.3s];
+    @apply visible opacity-100 translate-y-0 [transition:visibility_0s,opacity_0.3s,-webkit-transform_0.3s];
 }
 
 .f-header__nav-logo-wrapper {
-  @apply hidden;
-  /* hide logo nav on small devices */
+    @apply hidden;
+    /* hide logo nav on small devices */
 }
 
 .f-header__item {
-  @apply border-b border-gray-300 shrink-0;
+    @apply border-b border-gray-300 shrink-0;
 }
 
 .f-header__dropdown-icon {
-  @apply shrink-0 hidden ml-auto mr-2.5 my-0;
-  /* hide on mobile if link */
+    @apply shrink-0 hidden ml-auto mr-2.5 my-0;
+    /* hide on mobile if link */
 }
 
 .f-header__dropdown-control .f-header__link {
-  @apply p-0;
+    @apply p-0;
 }
 
 .f-header__dropdown-control .f-header__link,
@@ -79,109 +79,109 @@ Usage: codyhouse.co/license
 .f-header__btn,
 .f-header__link,
 .f-header__form-control {
-  @apply hover:text-primary-500;
+    @apply hover:text-primary;
 }
 
 .f-header__link,
 .f-header__dropdown-control,
 .f-header__dropdown-link {
-  @apply flex items-center no-underline text-gray-700 py-2 lg:py-3 px-0;
+    @apply flex items-center no-underline text-gray-700 py-2 lg:py-3 px-0;
 }
 
-.f-header__link[aria-current="page"],
-.f-header__dropdown-control[aria-current="page"],
-.f-header__dropdown-link[aria-current="page"] {
-  @apply text-primary-500;
+.f-header__link[aria-current='page'],
+.f-header__dropdown-control[aria-current='page'],
+.f-header__dropdown-link[aria-current='page'] {
+    @apply text-primary;
 }
 
 .f-header__btn,
 .f-header__form-control {
-  @apply w-full my-2 lg:my-3 mx-0;
+    @apply w-full my-2 lg:my-3 mx-0;
 }
 
 .f-header__dropdown-control {
-  @apply w-full;
+    @apply w-full;
 }
 
 .f-header__dropdown {
-  /* sub navigation */
-  @apply pl-5 lg:pl-8;
+    /* sub navigation */
+    @apply pl-5 lg:pl-8;
 }
 
 .f-header__dropdown-control + .f-header__dropdown {
-  @apply hidden;
+    @apply hidden;
 }
-.f-header__dropdown-control[aria-expanded="true"] + .f-header__dropdown {
-  @apply block;
+.f-header__dropdown-control[aria-expanded='true'] + .f-header__dropdown {
+    @apply block;
 }
 
 /* Desktop */
-@screen lg {
-  .f-header::before {
-    @apply content-["desktop"];
-  }
+@media (min-width: theme('breakpoint.lg')) {
+    .f-header::before {
+        @apply content-["desktop"];
+    }
 
-  .f-header__mobile-content {
-    @apply hidden;
-    /* hide logo + menu (mobile content) */
-  }
+    .f-header__mobile-content {
+        @apply hidden;
+        /* hide logo + menu (mobile content) */
+    }
 
-  .f-header__nav {
-    @apply static bg-transparent shadow-none visible opacity-100 translate-y-0 transition-none max-h-[none] overflow-visible overscroll-auto h-[--f-header-height] p-0;
-  }
-  .f-header__nav::before {
-    /* reset */
-    @apply hidden;
-  }
+    .f-header__nav {
+        @apply static bg-transparent shadow-none visible opacity-100 translate-y-0 transition-none max-h-[none] overflow-visible overscroll-auto h-[--f-header-height] p-0;
+    }
+    .f-header__nav::before {
+        /* reset */
+        @apply hidden;
+    }
 
-  .f-header__nav-logo-wrapper {
-    @apply flex;
-  }
+    .f-header__nav-logo-wrapper {
+        @apply flex;
+    }
 
-  .f-header__nav-grid,
-  .f-header__list {
-    @apply flex items-center;
-  }
+    .f-header__nav-grid,
+    .f-header__list {
+        @apply flex items-center;
+    }
 
-  .f-header__nav-grid {
-    @apply h-full;
-  }
+    .f-header__nav-grid {
+        @apply h-full;
+    }
 
-  .f-header__item {
-    @apply relative border-b-0;
-  }
+    .f-header__item {
+        @apply relative border-b-0;
+    }
 
-  .f-header__dropdown-icon {
-    @apply block mt-0 mr-0 mb-0 ml-0.5 lg:ml-1;
-  }
+    .f-header__dropdown-icon {
+        @apply block mt-0 mr-0 mb-0 ml-0.5 lg:ml-1;
+    }
 
-  .f-header__link--icon span {
-    @apply hidden;
-    /* hide icon label */
-  }
+    .f-header__link--icon span {
+        @apply hidden;
+        /* hide icon label */
+    }
 
-  .f-header__btn,
-  .f-header__form-control {
-    @apply m-0;
-    /* reset */
-  }
+    .f-header__btn,
+    .f-header__form-control {
+        @apply m-0;
+        /* reset */
+    }
 
-  .f-header__dropdown {
-    @apply absolute w-[220px] left-[calc(50%_-_110px)] pointer-events-none invisible opacity-0 [transition:visibility_0.2s_0.2s,opacity_0.2s_0s] top-full py-1 lg:py-1.5 px-0 bg-white rounded shadow-lg z-[5];
-  }
-  .f-header__dropdown-control + .f-header__dropdown {
-    @apply block;
-    /* reset style */
-  }
-  .f-header--open-submenu-hover .f-header__item:hover .f-header__dropdown,
-  .f-header__dropdown-control[aria-expanded="true"] + .f-header__dropdown {
-    @apply pointer-events-auto visible opacity-100 [transition:visibility_0.2s_0s,opacity_0.2s_0s];
-  }
+    .f-header__dropdown {
+        @apply absolute w-[220px] left-[calc(50%_-_110px)] pointer-events-none invisible opacity-0 [transition:visibility_0.2s_0.2s,opacity_0.2s_0s] top-full py-1 lg:py-1.5 px-0 bg-white rounded shadow-lg z-[5];
+    }
+    .f-header__dropdown-control + .f-header__dropdown {
+        @apply block;
+        /* reset style */
+    }
+    .f-header--open-submenu-hover .f-header__item:hover .f-header__dropdown,
+    .f-header__dropdown-control[aria-expanded='true'] + .f-header__dropdown {
+        @apply pointer-events-auto visible opacity-100 [transition:visibility_0.2s_0s,opacity_0.2s_0s];
+    }
 
-  .f-header__dropdown-link {
-    @apply text-gray-700 py-2 px-3 lg:px-5 duration-200;
-  }
-  .f-header__dropdown-link:hover {
-    @apply bg-gray-900/[.07] text-gray-900;
-  }
+    .f-header__dropdown-link {
+        @apply text-gray-700 py-2 px-3 lg:px-5 duration-200;
+    }
+    .f-header__dropdown-link:hover {
+        @apply bg-gray-900/[.07] text-gray-900;
+    }
 }

@@ -24,8 +24,7 @@ if ($params->get('backgroundimage')) {
 }
 ?>
 
-<div class="mod-custom custom banner relative p-4 flex items-center justify-center bg-no-repeat bg-cover bg-center h-[430px] md:h-[500px] lg:h-[600px]" id="<?php echo $modId; ?>">
-    <div class="prose prose-headings:text-white prose-headings:font-normal text-white lg:prose-lg">
-        <?php echo $module->content; ?>
-    </div>
+<div class="relative flex justify-center items-center bg-cover bg-no-repeat bg-center p-4 h-[430px] md:h-[500px] lg:h-[600px] mod-custom custom banner"
+    id="<?php echo $modId; ?>">
+    <?php echo $module->content; ?>
 </div>

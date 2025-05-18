@@ -1,15 +1,15 @@
 .primary-button > * {
-  @apply btn btn-primary hover:no-underline;
+    @apply btn btn-primary hover:no-underline;
 }
 
 .outline-button > * {
-  @apply btn btn-outline hover:no-underline;
+    @apply btn btn-outline hover:no-underline;
 }
 
 .secondary-button > * {
-  @apply btn btn-secondary hover:no-underline;
+    @apply btn btn-secondary hover:no-underline;
 }
 
 .color-primary {
-  @apply text-primary-500;
+    @apply text-primary;
 }

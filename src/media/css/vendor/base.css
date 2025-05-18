@@ -13,15 +13,32 @@
 */
 
 @layer base {
-  html {
-    @apply overflow-x-clip scroll-smooth scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-500 scrollbar-thumb-rounded min-h-full;
-  }
+    /*
+      The default border color has changed to `currentColor` in Tailwind CSS v4,
+      so we've added these compatibility styles to make sure everything still
+      looks the same as it did with Tailwind CSS v3.
 
-  body {
-    @apply bg-white min-h-full font-sans text-black text-base xl:text-lg antialiased break-words;
-  }
+      If we ever want to remove these styles, we need to add an explicit border
+      color utility to any element that depends on these defaults.
+    */
 
-  a {
-    @apply transition-colors duration-300 ease-in-out;
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        @apply border-zinc-200;
+    }
+
+    html {
+        @apply overflow-x-clip min-h-full;
+    }
+
+    body {
+        @apply bg-white min-h-full font-sans text-black text-base xl:text-lg antialiased break-words;
+    }
+
+    a {
+        @apply transition-colors duration-300 ease-in-out;
+    }
 }

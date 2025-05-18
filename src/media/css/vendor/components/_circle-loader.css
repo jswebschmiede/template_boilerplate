@@ -7,255 +7,254 @@ Usage: codyhouse.co/license
 
 -------------------------------- */
 :root {
-  --circle-loader-v1-size: 48px;
-  --circle-loader-v1-stroke-width: 4px;
-  --circle-loader-v2-size: 64px;
-  --circle-loader-v2-stroke-width: 2;
-  --circle-loader-v3-size: 64px;
-  --circle-loader-v4-size: 48px;
-  --circle-loader-v5-size: 64px;
-  --circle-loader-v6-size: 48px;
+    --circle-loader-v1-size: 48px;
+    --circle-loader-v1-stroke-width: 4px;
+    --circle-loader-v2-size: 64px;
+    --circle-loader-v2-stroke-width: 2;
+    --circle-loader-v3-size: 64px;
+    --circle-loader-v4-size: 48px;
+    --circle-loader-v5-size: 64px;
+    --circle-loader-v6-size: 48px;
 }
 
 .circle-loader {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
-  .circle-loader__label {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-  }
+    .circle-loader__label {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+    }
 }
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
-  .circle-loader--v1 {
-    transform: rotate(45deg);
-    will-change: transform;
-    animation: circle-loader-1 0.75s infinite
-      cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-  .circle-loader--v1 .circle-loader__circle {
-    width: var(--circle-loader-v1-size);
-    height: var(--circle-loader-v1-size);
-    border-width: var(--circle-loader-v1-stroke-width);
-    border-style: solid;
-    @apply border-primary-400/20;
-    border-radius: 50%;
-  }
-  .circle-loader--v1 .circle-loader__circle::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-width: inherit;
-    border-style: inherit;
-    border-color: transparent;
-    @apply border-t-primary-400;
-    border-radius: inherit;
-  }
+    .circle-loader--v1 {
+        transform: rotate(45deg);
+        will-change: transform;
+        animation: circle-loader-1 0.75s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    .circle-loader--v1 .circle-loader__circle {
+        width: var(--circle-loader-v1-size);
+        height: var(--circle-loader-v1-size);
+        border-width: var(--circle-loader-v1-stroke-width);
+        border-style: solid;
+        border-color: rgba(var(--color-primary-400), 0.2);
+        border-radius: 50%;
+    }
+    .circle-loader--v1 .circle-loader__circle::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-width: inherit;
+        border-style: inherit;
+        border-color: transparent;
+        border-top-color: rgb(var(--color-primary-400));
+        border-radius: inherit;
+    }
 }
 @keyframes circle-loader-1 {
-  0% {
-    transform: rotate(45deg);
-  }
-  100% {
-    transform: rotate(405deg);
-  }
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
 }
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
-  .circle-loader--v2 {
-    will-change: transform;
-    animation: circle-loader-spinning-main 1.4s infinite linear;
-  }
-  .circle-loader--v2 .circle-loader__svg {
-    display: block;
-    width: var(--circle-loader-v2-size);
-    height: var(--circle-loader-v2-size);
-    @apply text-primary-400;
-  }
-  .circle-loader--v2 .circle-loader__svg > * {
-    stroke-width: var(--circle-loader-v2-stroke-width);
-  }
-  .circle-loader--v2 .circle-loader__base {
-    opacity: 0.2;
-  }
-  .circle-loader--v2 .circle-loader__fill {
-    stroke-linecap: round;
-    stroke-dashoffset: 0;
-    stroke-dasharray: 90 120;
-    transform-origin: 50% 50%;
-    transform: rotate(45deg);
-    animation: circle-loader-dash 1.4s infinite;
-  }
+    .circle-loader--v2 {
+        will-change: transform;
+        animation: circle-loader-spinning-main 1.4s infinite linear;
+    }
+    .circle-loader--v2 .circle-loader__svg {
+        display: block;
+        width: var(--circle-loader-v2-size);
+        height: var(--circle-loader-v2-size);
+        color: rgb(var(--color-primary-400));
+    }
+    .circle-loader--v2 .circle-loader__svg > * {
+        stroke-width: var(--circle-loader-v2-stroke-width);
+    }
+    .circle-loader--v2 .circle-loader__base {
+        opacity: 0.2;
+    }
+    .circle-loader--v2 .circle-loader__fill {
+        stroke-linecap: round;
+        stroke-dashoffset: 0;
+        stroke-dasharray: 90 120;
+        transform-origin: 50% 50%;
+        transform: rotate(45deg);
+        animation: circle-loader-dash 1.4s infinite;
+    }
 }
 @keyframes circle-loader-dash {
-  0%,
-  20% {
-    stroke-dashoffset: 0;
-    transform: rotate(0);
-  }
-  50%,
-  70% {
-    stroke-dashoffset: 80;
-    transform: rotate(270deg);
-  }
-  100% {
-    stroke-dashoffset: 0;
-    transform: rotate(360deg);
-  }
+    0%,
+    20% {
+        stroke-dashoffset: 0;
+        transform: rotate(0);
+    }
+    50%,
+    70% {
+        stroke-dashoffset: 80;
+        transform: rotate(270deg);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        transform: rotate(360deg);
+    }
 }
 @keyframes circle-loader-spinning-main {
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
-  .circle-loader--v3 {
-    width: var(--circle-loader-v3-size);
-    height: var(--circle-loader-v3-size);
-  }
-  .circle-loader--v3 .circle-loader__circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    @apply bg-primary-400;
-    transform: scale(0);
-    opacity: 0.8;
-    will-change: transform, opacity;
-    animation: circle-loader-3 1.2s infinite;
-  }
-  .circle-loader--v3 .circle-loader__circle--2nd {
-    animation-delay: 0.6s;
-  }
+    .circle-loader--v3 {
+        width: var(--circle-loader-v3-size);
+        height: var(--circle-loader-v3-size);
+    }
+    .circle-loader--v3 .circle-loader__circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgb(var(--color-primary-400));
+        transform: scale(0);
+        opacity: 0.8;
+        will-change: transform, opacity;
+        animation: circle-loader-3 1.2s infinite;
+    }
+    .circle-loader--v3 .circle-loader__circle--2nd {
+        animation-delay: 0.6s;
+    }
 }
 @keyframes circle-loader-3 {
-  to {
-    transform: scale(1);
-    opacity: 0;
-  }
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
-  .circle-loader--v4 {
-    width: var(--circle-loader-v4-size);
-    height: var(--circle-loader-v4-size);
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  .circle-loader--v4 .circle-loader__mask,
-  .circle-loader--v4 .circle-loader__circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-  }
-  .circle-loader--v4 .circle-loader__mask {
-    clip-path: circle(calc(0.5 * var(--circle-loader-v4-size)));
-  }
-  .circle-loader--v4 .circle-loader__circle--1st {
-    @apply bg-gray-400;
-  }
-  .circle-loader--v4 .circle-loader__circle--2nd {
-    @apply bg-primary-400;
-    will-change: transform;
-    transform-origin: 50% 100%;
-    animation: circle-loader-4 1.2s infinite cubic-bezier(0.23, 0.9, 0.75, 0.1);
-    transform: tranprimaryX(-100%);
-  }
+    .circle-loader--v4 {
+        width: var(--circle-loader-v4-size);
+        height: var(--circle-loader-v4-size);
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .circle-loader--v4 .circle-loader__mask,
+    .circle-loader--v4 .circle-loader__circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+    }
+    .circle-loader--v4 .circle-loader__mask {
+        clip-path: circle(calc(0.5 * var(--circle-loader-v4-size)));
+    }
+    .circle-loader--v4 .circle-loader__circle--1st {
+        background-color: rgb(var(--color-gray-400));
+    }
+    .circle-loader--v4 .circle-loader__circle--2nd {
+        background-color: rgb(var(--color-primary-400));
+        will-change: transform;
+        transform-origin: 50% 100%;
+        animation: circle-loader-4 1.2s infinite cubic-bezier(0.23, 0.9, 0.75, 0.1);
+        transform: translateX(-100%);
+    }
 }
 @keyframes circle-loader-4 {
-  to {
-    transform: tranprimaryX(100%);
-  }
+    to {
+        transform: translateX(100%);
+    }
 }
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
-  .circle-loader--v5 {
-    font-size: var(--circle-loader-v5-size);
-    width: 1em;
-    height: 1em;
-  }
-  .circle-loader--v5 .circle-loader__label {
-    font-size: 1rem;
-  }
-  .circle-loader--v5 .circle-loader__ball {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 0.140625em);
-    width: 0.28125em;
-    height: 0.28125em;
-    @apply bg-primary-400;
-    border-radius: 50%;
-    animation: circle-loader-5-ball 0.8s infinite;
-  }
-  .circle-loader--v5 .circle-loader__shadow {
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 0.15625em);
-    width: 0.3125em;
-    height: 0.3125em;
-    @apply bg-gray-300;
-    border-radius: 50%;
-    transform: scaleY(0.4) scaleX(1.2);
-    animation: circle-loader-5-shadow 0.8s infinite;
-  }
+    .circle-loader--v5 {
+        font-size: var(--circle-loader-v5-size);
+        width: 1em;
+        height: 1em;
+    }
+    .circle-loader--v5 .circle-loader__label {
+        font-size: 1rem;
+    }
+    .circle-loader--v5 .circle-loader__ball {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 0.140625em);
+        width: 0.28125em;
+        height: 0.28125em;
+        background-color: rgb(var(--color-primary-400));
+        border-radius: 50%;
+        animation: circle-loader-5-ball 0.8s infinite;
+    }
+    .circle-loader--v5 .circle-loader__shadow {
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 0.15625em);
+        width: 0.3125em;
+        height: 0.3125em;
+        background-color: rgb(var(--color-gray-300));
+        border-radius: 50%;
+        transform: scaleY(0.4) scaleX(1.2);
+        animation: circle-loader-5-shadow 0.8s infinite;
+    }
 }
 @keyframes circle-loader-5-ball {
-  0% {
-    transform: tranprimaryY(0);
-    animation-timing-function: cubic-bezier(0.61, 0.12, 0.85, 0.4);
-  }
-  50% {
-    transform: tranprimaryY(0.5625em);
-    animation-timing-function: cubic-bezier(0.12, 0.59, 0.46, 0.95);
-  }
-  100% {
-    transform: tranprimaryY(0);
-  }
+    0% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0.61, 0.12, 0.85, 0.4);
+    }
+    50% {
+        transform: translateY(0.5625em);
+        animation-timing-function: cubic-bezier(0.12, 0.59, 0.46, 0.95);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 @keyframes circle-loader-5-shadow {
-  0% {
-    transform: scaleY(0.4) scaleX(1.2);
-    @apply bg-gray-300;
-    animation-timing-function: cubic-bezier(0.61, 0.12, 0.85, 0.4);
-  }
-  50% {
-    transform: scaleY(0.2) scaleX(0.6);
-    @apply bg-gray-400;
-    animation-timing-function: cubic-bezier(0.12, 0.59, 0.46, 0.95);
-  }
-  100% {
-    transform: scaleY(0.4) scaleX(1.2);
-    @apply bg-gray-300;
-  }
+    0% {
+        transform: scaleY(0.4) scaleX(1.2);
+        background-color: rgb(var(--color-gray-300));
+        animation-timing-function: cubic-bezier(0.61, 0.12, 0.85, 0.4);
+    }
+    50% {
+        transform: scaleY(0.2) scaleX(0.6);
+        background-color: rgb(var(--color-gray-400));
+        animation-timing-function: cubic-bezier(0.12, 0.59, 0.46, 0.95);
+    }
+    100% {
+        transform: scaleY(0.4) scaleX(1.2);
+        background-color: rgb(var(--color-gray-300));
+    }
 }
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
-  .circle-loader--v6 .circle-loader__svg {
-    display: block;
-    width: var(--circle-loader-v6-size);
-    height: var(--circle-loader-v6-size);
-    @apply text-primary-400;
-  }
-  .circle-loader--v6 .circle-loader__fill {
-    stroke-width: 8px;
-    stroke-dashoffset: 35;
-    stroke-dasharray: 36 36;
-    animation: circle-loader-6 1.5s infinite;
-  }
+    .circle-loader--v6 .circle-loader__svg {
+        display: block;
+        width: var(--circle-loader-v6-size);
+        height: var(--circle-loader-v6-size);
+        color: rgb(var(--color-primary-400));
+    }
+    .circle-loader--v6 .circle-loader__fill {
+        stroke-width: 8px;
+        stroke-dashoffset: 35;
+        stroke-dasharray: 36 36;
+        animation: circle-loader-6 1.5s infinite;
+    }
 }
 @keyframes circle-loader-6 {
-  0%,
-  100% {
-    stroke-dashoffset: 35;
-  }
-  50% {
-    stroke-dashoffset: -35;
-  }
+    0%,
+    100% {
+        stroke-dashoffset: 35;
+    }
+    50% {
+        stroke-dashoffset: -35;
+    }
 }
