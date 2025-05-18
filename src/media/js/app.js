@@ -6,7 +6,7 @@ import './vendor/anim-menu-btn';
 import './vendor/flexi-header';
 import StickyHeader from './vendor/sticky-header';
 
-import '../css/site.css';
+import '../css/app.css';
 
 // init
 (() => {
@@ -15,5 +15,5 @@ import '../css/site.css';
         new StickyHeader(stickyHeader);
     }
 
-    console.log('site.js loaded');
+    console.log('app.js loaded');
 })();

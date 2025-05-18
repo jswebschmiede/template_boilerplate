@@ -11,7 +11,7 @@
    * This injects Tailwind's base styles and any base styles registered by
    * plugins, then adds custom base styles.
    */
-@import './vendor/base.css' layer(base);
+@import './vendor/base.css';
 
 /**
    * This injects Tailwind's utility classes and any utility classes registered
@@ -23,6 +23,6 @@
    * This injects Tailwind's component classes and any component classes
    * registered by plugins, then adds custom component classes.
    */
-@import-glob "./vendor/joomla/**";
-@import-glob "./vendor/components/**";
+@import-glob "./vendor/joomla/**" layer(components);
+@import-glob "./vendor/components/**" layer(components);
 @import './vendor/custom.css' layer(utilities);

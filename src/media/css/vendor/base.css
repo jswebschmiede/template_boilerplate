@@ -35,10 +35,30 @@
     }
 
     body {
-        @apply bg-white min-h-full font-sans text-black text-base xl:text-lg antialiased break-words;
+        @apply bg-white min-h-full font-sans text-zinc-950 antialiased;
     }
 
     a {
         @apply transition-colors duration-300 ease-in-out;
+    }
+
+    @keyframes button-pop {
+        0% {
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-down {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
     }
 }

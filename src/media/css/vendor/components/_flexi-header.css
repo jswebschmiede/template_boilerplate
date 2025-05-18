@@ -10,7 +10,8 @@ Usage: codyhouse.co/license
     --f-header-height: 50px;
     --f-header-logo-width: 140px;
 }
-@screen lg {
+
+@media (min-width: theme('breakpoint.lg')) {
     :root {
         --f-header-height: 90px;
         --f-header-logo-width: 160px;

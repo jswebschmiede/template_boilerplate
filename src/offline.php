@@ -31,8 +31,8 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->getWebAssetManager();
 
-$wa->useStyle('template.boilerplate.site');
-$wa->useScript('template.boilerplate.site');
+$wa->useStyle('template.boilerplate.app');
+$wa->useScript('template.boilerplate.app');
 $wa->addInlineScript('document.getElementsByTagName("html")[0].className += " js";', [], []);
 
 // Browsers support SVG favicons
@@ -55,13 +55,13 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
     </head>
 
     <body>
-        <div class="container mx-auto max-w-4xl py-8 text-center">
-            <div class="bg-white shadow-md rounded-lg p-6">
+        <div class="mx-auto py-8 max-w-4xl text-center container">
+            <div class="bg-white shadow-md p-6 rounded-lg">
                 <div class="mb-6">
                     <?php if (!empty($logo)): ?>
                         <h1><?php echo $logo; ?></h1>
                     <?php else: ?>
-                        <h1 class="text-primary text-4xl mb-4"><?php echo $sitename; ?></h1>
+                        <h1 class="mb-4 text-primary text-4xl"><?php echo $sitename; ?></h1>
                     <?php endif; ?>
                     <?php if ($app->get('offline_image')): ?>
                         <?php echo HTMLHelper::_('image', $app->get('offline_image'), $sitename, [], false, 0); ?>
@@ -72,14 +72,14 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
                         <p class="text-lg"><?php echo Text::_('JOFFLINE_MESSAGE'); ?></p>
                     <?php endif; ?>
                 </div>
-                <div class="max-w-xs mx-auto py-8 text-left">
+                <div class="mx-auto py-8 max-w-xs text-left">
                     <jdoc:include type="message" />
                     <form action="<?php echo Route::_('index.php', true); ?>" method="post" id="form-login">
                         <fieldset class="flex flex-col">
                             <label for="username" class="mb-2"><?php echo Text::_('JGLOBAL_USERNAME'); ?></label>
-                            <input name="username" class="form-input mb-4" id="username" type="text">
+                            <input name="username" class="mb-4 form-input" id="username" type="text">
                             <label for="password" class="mb-2"><?php echo Text::_('JGLOBAL_PASSWORD'); ?></label>
-                            <input name="password" class="form-input mb-4" id="password" type="password">
+                            <input name="password" class="mb-4 form-input" id="password" type="password">
 
                             <?php foreach ($extraButtons as $button):
                                 $dataAttributeKeys = array_filter(array_keys($button), function ($key) {
@@ -102,7 +102,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
                             <?php endforeach; ?>
 
                             <button type="submit" name="Submit"
-                                class="btn btn-primary mt-4"><?php echo Text::_('JLOGIN'); ?></button>
+                                class="mt-4 btn btn-primary"><?php echo Text::_('JLOGIN'); ?></button>
 
                             <input type="hidden" name="option" value="com_users">
                             <input type="hidden" name="task" value="user.login">

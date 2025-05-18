@@ -33,47 +33,68 @@
     will-change: color, background-color, border-color, opacity, box-shadow, transform;
     box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     animation: button-pop 0.25s ease-out;
+
+    &:hover {
+        @apply no-underline;
+    }
+
+    &:active:hover,
+    &:active:focus {
+        animation: button-pop 0s ease-out;
+        transform: scale(0.97);
+    }
+}
+
+@utility btn-sm {
+    @apply px-2 py-1 text-sm;
 }
 
 @utility btn-primary {
-    color: #fff;
-    background-color: var(--color-primary);
+    @apply bg-primary text-white;
+
+    &:hover {
+        @apply bg-primary/80;
+    }
 }
 
 @utility btn-secondary {
-    color: #fff;
-    background-color: var(--color-secondary);
+    @apply bg-secondary text-white;
+
+    &:hover {
+        @apply bg-secondary/80;
+    }
 }
 
 @utility btn-outline {
-    color: #000;
-    border-color: var(--color-primary);
+    @apply border-primary text-primary;
+
+    &:hover {
+        @apply bg-primary/80 border-primary/80;
+    }
 }
 
+/* Shadows */
+@utility shadow-inner-xl {
+    box-shadow: inset 0px 3px 23px rgba(0, 0, 0, 0.25);
+}
+
+@utility shadow-inner-lg {
+    box-shadow: inset 0px 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+@utility shadow-inner-md {
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+@utility shadow-inner-sm {
+    box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Animations */
 @utility animate-slide-down {
     animation: slide-down 0.35s ease-out;
 }
 
 @utility animate-button-pop {
     animation: button-pop 0.25s ease-out;
-}
-
-@keyframes button-pop {
-    0% {
-        transform: scale(0.95);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-down {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
 }

@@ -6,9 +6,9 @@
     "license": "GPL-2.0-or-later",
     "assets": [
         {
-            "name": "template.boilerplate.site",
+            "name": "template.boilerplate.app",
             "type": "script",
-            "uri": "site.bundle.js",
+            "uri": "app.bundle.js",
             "dependencies": ["core"],
             "attributes": {
                 "defer": true
@@ -16,9 +16,9 @@
             "version": "1.0.0"
         },
         {
-            "name": "template.boilerplate.site",
+            "name": "template.boilerplate.app",
             "type": "style",
-            "uri": "site.min.css",
+            "uri": "app.min.css",
             "version": "1.0.0"
         }
     ]
