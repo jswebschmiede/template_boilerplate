@@ -18,8 +18,8 @@ use Joomla\CMS\HTML\HTMLHelper;
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->getWebAssetManager();
 
-$wa->useStyle('template.boilerplate.site');
-$wa->useScript('template.boilerplate.site');
+$wa->useStyle('template.boilerplate.app');
+$wa->useScript('template.boilerplate.app');
 $wa->addInlineScript('document.getElementsByTagName("html")[0].className += " js";', [], []);
 
 

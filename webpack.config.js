@@ -139,7 +139,7 @@ module.exports = (env, argv) => {
         mode: isProduction ? 'production' : 'development',
         devtool: isProduction ? 'source-map' : 'eval-source-map',
         entry: {
-            site: './src/media/js/site.js',
+            app: './src/media/js/app.js',
         },
         output: {
             filename: 'media/js/[name].bundle.js',
@@ -184,40 +184,40 @@ module.exports = (env, argv) => {
             }),
             ...(isProduction
                 ? [
-                      new ZipPlugin({
-                          path: path.resolve(__dirname, 'dist/zip'),
-                          filename: 'template_boilerplate.zip',
-                          extension: 'zip',
-                          fileOptions: {
-                              mtime: new Date(),
-                              mode: 0o100664,
-                              compress: true,
-                              forceZip64Format: false,
-                          },
-                      }),
-                  ]
+                    new ZipPlugin({
+                        path: path.resolve(__dirname, 'dist/zip'),
+                        filename: 'template_boilerplate.zip',
+                        extension: 'zip',
+                        fileOptions: {
+                            mtime: new Date(),
+                            mode: 0o100664,
+                            compress: true,
+                            forceZip64Format: false,
+                        },
+                    }),
+                ]
                 : [
-                      new BrowserSyncPlugin(
-                          {
-                              proxy: siteUrl,
-                              port: 3000,
-                              ui: {
-                                  port: 3001,
-                              },
-                              files: [
-                                  'dist/**/*.php',
-                                  'dist/**/*.js',
-                                  'dist/**/*.css',
-                                  'dist/**/*.html',
-                              ],
-                              reloadDelay: 0,
-                              open: false,
-                          },
-                          {
-                              reload: false,
-                          },
-                      ),
-                  ]),
+                    new BrowserSyncPlugin(
+                        {
+                            proxy: siteUrl,
+                            port: 3000,
+                            ui: {
+                                port: 3001,
+                            },
+                            files: [
+                                'dist/**/*.php',
+                                'dist/**/*.js',
+                                'dist/**/*.css',
+                                'dist/**/*.html',
+                            ],
+                            reloadDelay: 0,
+                            open: false,
+                        },
+                        {
+                            reload: false,
+                        },
+                    ),
+                ]),
         ],
         optimization: {
             minimizer: [

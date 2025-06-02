@@ -1,0 +1,124 @@
+.entry-content {
+    @apply text-zinc-950 text-base leading-relaxed lg:text-lg;
+
+    /* Strong */
+    :where(strong) {
+        @apply font-semibold;
+    }
+
+    /* Headings */
+    :where(h1) {
+        @apply font-semibold text-3xl mb-8;
+    }
+
+    :where(h2) {
+        @apply font-semibold text-2xl mb-8;
+    }
+
+    :where(h3) {
+        @apply font-semibold text-xl mb-8;
+    }
+
+    :where(h2 + h3) {
+        @apply mt-0;
+    }
+
+    /* Paragraphs */
+    :where(p) {
+        @apply mt-6 mb-6;
+    }
+
+    :where(p:last-child) {
+        @apply mb-0;
+    }
+
+    /* Links */
+    :where(a) {
+        @apply text-primary;
+
+        &:hover {
+            @apply underline;
+        }
+    }
+
+    /* Lists */
+    :where(ul, ol) {
+        @apply pl-6 mt-6 mb-6;
+    }
+
+    :where(ul:last-child, ol:last-child) {
+        @apply mb-0;
+    }
+
+    :where(dl) {
+        @apply mt-6 mb-6;
+    }
+
+    :where(dt) {
+        @apply font-semibold;
+    }
+
+    :where(dd) {
+        @apply mt-2 text-base;
+    }
+
+    :where(ol) {
+        @apply list-decimal;
+    }
+
+    :where(ul) {
+        @apply list-disc;
+    }
+
+    :where(li) {
+        @apply pl-1;
+    }
+
+    :where(li)::marker {
+        @apply text-zinc-500;
+    }
+
+    :where(li > *),
+    :where(li li) {
+        @apply mt-4;
+    }
+
+    :where(ol > li)::marker {
+        @apply text-base font-semibold;
+    }
+
+    :where(li > :first-child) {
+        @apply mt-0;
+    }
+
+    :where(li > :last-child) {
+        @apply mb-0;
+    }
+
+    /* Code */
+    :where(code) {
+        @apply bg-primary/25 px-1 py-0.5 rounded-md text-sm;
+    }
+
+    /* Blockquote */
+    :where(blockquote) {
+        @apply pl-4 pt-2 pb-2 mt-6 mb-6 border-l-4 border-primary/25 italic;
+    }
+
+    :where(blockquote p) {
+        @apply my-0;
+    }
+
+    :where(blockquote cite) {
+        @apply block mt-2 text-sm font-normal not-italic;
+    }
+
+    /* Figure */
+    :where(figure) {
+        @apply mt-6 mb-6;
+    }
+
+    :where(figcaption) {
+        @apply mt-2 text-sm text-center;
+    }
+}

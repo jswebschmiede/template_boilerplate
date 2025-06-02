@@ -62,8 +62,8 @@ $errorCode = $this->error->getCode();
                     </main>
                 </div>
             <?php else: ?>
-                <div class="w-full-p-1 lg:w-full-p-2 mx-auto max-w-wide pt-12 lg:pt-24">
-                    <div class="prose lg:prose-lg">
+                <div class="mx-auto w-full-p-1 lg:w-full-p-2 pt-12 lg:pt-24 max-w-wide">
+                    <div class="entry-content">
                         <h1 class="page-header"><?php echo Text::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
                         <div class="card">
                             <div class="card-body">
@@ -85,7 +85,7 @@ $errorCode = $this->error->getCode();
                                     <hr>
                                     <p><?php echo Text::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?></p>
                                     <blockquote>
-                                        <span class="badge bg-secondary"><?php echo $this->error->getCode(); ?></span>
+                                        <span class="bg-secondary badge"><?php echo $this->error->getCode(); ?></span>
                                         <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?>
                                     </blockquote>
                                 </main>

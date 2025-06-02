@@ -59,13 +59,13 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
             <?php endif ?>
 
             <?php if (Factory::getApplication()->getMessageQueue()): ?>
-                <div class="py-4 max-w-content mx-auto">
+                <div class="mx-auto py-4 max-w-content">
                     <jdoc:include type="message" />
                 </div>
             <?php endif; ?>
 
-            <div class="w-full-p-1 lg:w-full-p-2 mx-auto max-w-wide pt-12 lg:pt-24">
-                <div class="prose lg:prose-lg">
+            <div class="mx-auto w-full-p-1 lg:w-full-p-2 pt-12 lg:pt-24 max-w-wide">
+                <div class="entry-content">
                     <jdoc:include type="component" />
                 </div>
             </div>

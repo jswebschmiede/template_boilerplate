@@ -23,9 +23,9 @@ $doc = Factory::getApplication()->getDocument();
 ?>
 
 <header
-    class="f-header bg-white absolute top-0 left-0 js-f-header w-full h-[--f-header-height] z-[3] <?php echo ((bool) $templateparams['stickyHeader']) ? 'f-header--sticky' : null; ?>"
+    class="f-header bg-white absolute top-0 left-0 js-f-header w-full h-(--f-header-height) z-[3] <?php echo ((bool) $templateparams['stickyHeader']) ? 'f-header--sticky' : null; ?>"
     data-element="header">
-    <div class="f-header__mobile-content w-full-p-1 lg:w-full-p-2 mx-auto max-w-big">
+    <div class="mx-auto w-full-p-1 lg:w-full-p-2 max-w-big f-header__mobile-content">
         <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
             <?php if ((bool) $templateparams['brand']): ?>
                 <?php echo $logo; ?>
@@ -38,7 +38,7 @@ $doc = Factory::getApplication()->getDocument();
     </div>
 
     <div class="f-header__nav" role="navigation">
-        <div class="f-header__nav-grid lg:justify-between w-full-p-1 lg:w-full-p-2 mx-auto max-w-big">
+        <div class="lg:justify-between f-header__nav-grid mx-auto w-full-p-1 lg:w-full-p-2 max-w-big">
             <div class="f-header__nav-logo-wrapper grow">
                 <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
                     <?php if ((bool) $templateparams['brand']): ?>
