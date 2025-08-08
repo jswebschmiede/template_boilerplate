@@ -16,13 +16,14 @@ let lastPercentage = 0;
 const siteUrl = 'http://127.0.0.1:6969/';
 
 const progressHandler = (percentage, message) => {
-    // Round to 2 decimal places
     const roundedPercentage = Math.round(percentage * 100);
 
     // Only output if the percentage has changed
     if (roundedPercentage !== lastPercentage) {
-        // Clear console
-        process.stdout.write('\x1Bc');
+
+        if (percentage > 0 && percentage <= 1) {
+            process.stdout.write('\x1Bc');
+        }
 
         if (percentage === 0) {
             console.log(chalk.blue(`${logSymbols.info} Build starting...`));
