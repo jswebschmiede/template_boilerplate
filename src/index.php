@@ -44,14 +44,15 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
 
         <?php echo LayoutHelper::render('template.header', [
             'templateparams' => $templateparams,
-            'logo' => $logo
+            'logo' => $logo,
+            'home' => $home
         ]); ?>
 
         <?php if ($this->countModules('header', true)): ?>
             <jdoc:include type="modules" name="header" style="none" />
         <?php endif ?>
 
-        <main data-element="content">
+        <main id="content" data-element="content">
             <?php if ($this->countModules('content-top', true)): ?>
                 <section id="content-top" class="content-top">
                     <jdoc:include type="modules" name="content-top" style="default" />
@@ -65,7 +66,7 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
             <?php endif; ?>
 
             <div class="mx-auto w-full-p-1 lg:w-full-p-2 pt-12 lg:pt-24 max-w-wide">
-                <div class="entry-content">
+                <div class="reveal-fx--translate-up entry-content reveal-fx">
                     <jdoc:include type="component" />
                 </div>
             </div>

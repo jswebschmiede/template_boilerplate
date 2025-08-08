@@ -13,6 +13,6 @@ defined('_JEXEC') or die;
 $modId = 'mod-custom' . $module->id;
 ?>
 
-<div id="<?php echo $modId; ?>" class="mod-custom custom">
+<div id="<?php echo $modId; ?>" class="reveal-fx--translate-up mod-custom custom reveal-fx">
     <?php echo $module->content; ?>
 </div>

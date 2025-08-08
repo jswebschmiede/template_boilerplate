@@ -16,21 +16,31 @@ use Joomla\CMS\Uri\Uri;
 
 /** @var Joomla\CMS\Document\HtmlDocument $doc */
 
+// phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols
+$doc = Factory::getApplication()->getDocument();
+// phpcs:enable PSR1.Files.SideEffects.FoundWithSymbols
+
 $templateparams = $displayData['templateparams'];
 $logo = $displayData['logo'];
+$home = $displayData['home'];
 
-$doc = Factory::getApplication()->getDocument();
 ?>
 
 <header
     class="f-header bg-white absolute top-0 left-0 js-f-header w-full h-(--f-header-height) z-[3] <?php echo ((bool) $templateparams['stickyHeader']) ? 'f-header--sticky' : null; ?>"
     data-element="header">
     <div class="mx-auto w-full-p-1 lg:w-full-p-2 max-w-big f-header__mobile-content">
-        <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
+        <?php if ($home): ?>
             <?php if ((bool) $templateparams['brand']): ?>
                 <?php echo $logo; ?>
             <?php endif; ?>
-        </a>
+        <?php else: ?>
+            <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
+                <?php if ((bool) $templateparams['brand']): ?>
+                    <?php echo $logo; ?>
+                <?php endif; ?>
+            </a>
+        <?php endif ?>
 
         <button class="anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus" aria-label="Toggle menu">
             <i class="anim-menu-btn__icon anim-menu-btn__icon--close" aria-hidden="true"></i>
@@ -40,13 +50,18 @@ $doc = Factory::getApplication()->getDocument();
     <div class="f-header__nav" role="navigation">
         <div class="lg:justify-between f-header__nav-grid mx-auto w-full-p-1 lg:w-full-p-2 max-w-big">
             <div class="f-header__nav-logo-wrapper grow">
-                <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
+                <?php if ($home): ?>
                     <?php if ((bool) $templateparams['brand']): ?>
                         <?php echo $logo; ?>
                     <?php endif; ?>
-                </a>
+                <?php else: ?>
+                    <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
+                        <?php if ((bool) $templateparams['brand']): ?>
+                            <?php echo $logo; ?>
+                        <?php endif; ?>
+                    </a>
+                <?php endif ?>
             </div>
-
 
             <?php if ($doc->countModules('main-menu', true)): ?>
                 <jdoc:include type="modules" name="main-menu" style="none" />

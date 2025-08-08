@@ -15,9 +15,12 @@ use Joomla\CMS\Factory;
 
 /** @var Joomla\CMS\Document\HtmlDocument $doc */
 
+// phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols
 $doc = Factory::getApplication()->getDocument();
+// phpcs:enable PSR1.Files.SideEffects.FoundWithSymbols
 
 $templateparams = $displayData['templateparams'];
+
 ?>
 
 <footer data-element="footer">

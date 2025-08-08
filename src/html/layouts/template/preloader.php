@@ -12,10 +12,10 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Language\Text;
+
 ?>
 
-
-<div class="spinner-wrapper fixed inset-0 bg-white z-50 visible transition flex justify-center items-center"
+<div class="visible z-50 fixed inset-0 flex justify-center items-center bg-white transition spinner-wrapper"
 	id="loader">
 	<div class="circle-loader circle-loader--v2" role="alert">
 		<p class="circle-loader__label"><?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_PRELOADER_TEXT"); ?></p>

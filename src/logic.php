@@ -44,9 +44,14 @@ $templateparams = $app->getTemplate(true)->params;
 ($menu->home == 1) ? $home = true : $home = false;
 
 // Browsers support SVG favicons
-$this->addHeadLink(HTMLHelper::_('image', 'favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
-$this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
-$this->addHeadLink(HTMLHelper::_('image', 'favicon-pinned.svg', '', [], true, 1), 'mask-icon', 'rel', ['color' => '#000']);
+$this->addHeadLink('media/templates/site/' . $this->template . '/images/favicon-96x96.png', 'icon', 'rel', ['type' => 'image/png', 'sizes' => '96x96']);
+$this->addHeadLink('media/templates/site/' . $this->template . '/images/favicon.svg', 'icon', 'rel', ['type' => 'image/svg+xml']);
+$this->addHeadLink('media/templates/site/' . $this->template . '/images/apple-touch-icon.png', 'apple-touch-icon', 'rel', ['sizes' => '180x180']);
+$this->addHeadLink('media/templates/site/' . $this->template . '/images/favicon.ico', 'shortcut icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
+
+$this->setMetaData('viewport', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
+$this->setMetaData('content-type', 'text/html', true);
+$this->setMetaData('apple-mobile-web-app-title', $sitename, true);
 
 // Logo file or site title param
 if ($templateparams['logoFile']) {
@@ -63,7 +68,7 @@ if ($templateparams['logoFile']) {
 } elseif ($templateparams['siteTitle']) {
     $logo = '<span title="' . $sitename . '">' . htmlspecialchars($this->params->get('siteTitle'), ENT_COMPAT, 'UTF-8') . '</span>';
 } else {
-    $logo = HTMLHelper::_('image', 'logo.svg', $sitename, ['class' => 'logo d-inline-block', 'loading' => 'eager', 'decoding' => 'async'], true, 0);
+    $logo = HTMLHelper::_('image', 'logo.svg', $sitename, ['class' => 'logo inline-block', 'loading' => 'eager', 'decoding' => 'async'], true, 0);
 }
 
 // assets
