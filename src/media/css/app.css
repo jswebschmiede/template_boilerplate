@@ -25,4 +25,4 @@
    */
 @import-glob "./vendor/joomla/**" layer(components);
 @import-glob "./vendor/components/**" layer(components);
-@import './vendor/custom.css' layer(utilities);
+@import './vendor/custom.css' layer(components);
