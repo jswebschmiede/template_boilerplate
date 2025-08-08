@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomla.Site
- * @subpackage  Templates.template_boilerplate
+ * @subpackage  Templates.hoennetreff
  *
  * @copyright   (C) 2024. All rights reserved by Jörg Schöneburg
  * @license     MIT License (MIT) see LICENSE.txt
@@ -24,7 +24,7 @@ if ($module->content === null || $module->content === '') {
 
 $moduleTag = $params->get('module_tag', 'div');
 $moduleAttribs = [];
-$moduleAttribs['class'] = 'default entry-content py-12 lg:py-24 ' . htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8');
+$moduleAttribs['class'] = 'default bg-gray-100 entry-content mt-12 lg:mt-24 py-12 lg:py-24 ' . htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8');
 
 ?>
 <<?php echo $moduleTag; ?> <?php echo ArrayHelper::toString($moduleAttribs); ?>>

@@ -24,12 +24,12 @@ if ($module->content === null || $module->content === '') {
 
 $moduleTag = $params->get('module_tag', 'div');
 $moduleAttribs = [];
-$moduleAttribs['class'] = 'default entry-content py-12 lg:py-24 ' . htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8');
+$moduleAttribs['class'] = 'default entry-content big py-12 lg:py-24 ' . htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8');
 
 ?>
 <<?php echo $moduleTag; ?> <?php echo ArrayHelper::toString($moduleAttribs); ?>>
 
-    <div class="mx-auto w-full-p-1 lg:w-full-p-2 max-w-content">
+    <div class="mx-auto w-full-p-1 lg:w-full-p-2 max-w-big">
         <?php if ($module->showtitle): ?>
             <?php echo LayoutHelper::render('template.heading', ['params' => $params, 'module' => $module, 'attribs' => $attribs]); ?>
         <?php endif; ?>

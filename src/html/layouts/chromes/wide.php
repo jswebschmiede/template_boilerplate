@@ -12,6 +12,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\Utilities\ArrayHelper;
+use Joomla\CMS\Layout\LayoutHelper;
 
 $module = $displayData['module'];
 $params = $displayData['params'];
@@ -23,40 +24,16 @@ if ($module->content === null || $module->content === '') {
 
 $moduleTag = $params->get('module_tag', 'div');
 $moduleAttribs = [];
-$moduleAttribs['class'] = 'default wide pt-12 lg:pt-24 max-w-big mx-auto w-full-p-1 lg:w-full-p-2 ' . htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8');
-$moduleId = htmlspecialchars($params->get('module_id', ''), ENT_QUOTES, 'UTF-8');
-$headerTag = htmlspecialchars($params->get('header_tag', 'h3'), ENT_QUOTES, 'UTF-8');
-$headerClass = htmlspecialchars($params->get('header_class', ''), ENT_QUOTES, 'UTF-8');
-$headerAttribs = [];
+$moduleAttribs['class'] = 'default entry-content wide py-12 lg:py-24 ' . htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8');
 
-$headerAttribs['class'] = 'mb-8';
-
-// Only output a header class if one is set
-if ($headerClass !== '') {
-    $headerAttribs['class'] .= $headerClass;
-}
-if ($moduleId !== '') {
-    $moduleAttribs['id'] = $moduleId;
-}
-
-// Only add aria if the moduleTag is not a div
-if ($moduleTag !== 'div') {
-    if ($module->showtitle):
-        $moduleAttribs['aria-labelledby'] = 'mod-' . $module->id;
-        $headerAttribs['id'] = 'mod-' . $module->id;
-    else:
-        $moduleAttribs['aria-label'] = $module->title;
-    endif;
-}
-
-$header = '<' . $headerTag . ' ' . ArrayHelper::toString($headerAttribs) . '>' . $module->title . '</' . $headerTag . '>';
 ?>
 <<?php echo $moduleTag; ?> <?php echo ArrayHelper::toString($moduleAttribs); ?>>
 
-    <?php if ($module->showtitle): ?>
-        <?php echo $header; ?>
-    <?php endif; ?>
+    <div class="mx-auto w-full-p-1 lg:w-full-p-2 max-w-wide">
+        <?php if ($module->showtitle): ?>
+            <?php echo LayoutHelper::render('template.heading', ['params' => $params, 'module' => $module, 'attribs' => $attribs]); ?>
+        <?php endif; ?>
 
-    <?php echo $module->content; ?>
-
+        <?php echo $module->content; ?>
+    </div>
 </<?php echo $moduleTag; ?>>
