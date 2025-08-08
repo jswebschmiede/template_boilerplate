@@ -2,6 +2,14 @@ fieldset + fieldset {
     @apply mt-8;
 }
 
+.convertforms {
+    --color-primary: theme('colors.primary') !important;
+    --color-secondary: theme('colors.secondary') !important;
+    --color-accent: theme('colors.accent') !important;
+
+    @apply max-w-3xl mx-auto;
+}
+
 .convertforms .cf-fields {
     @apply md:grid grid-cols-12 gap-4;
 }
@@ -18,15 +26,116 @@ fieldset + fieldset {
 }
 
 .convertforms .cf-control-group .cf-label {
-    @apply block mb-1 text-gray-700;
+    @apply block mb-1;
+}
+.convertforms .cf-checkbox-group .cf-label p {
+    @apply -mt-[1.7rem] leading-[var(--checkbox-radio-line-height)];
+
+    a {
+        @apply underline;
+    }
 }
 
 .form-select,
 .form-control:not([type='checkbox']):not([type='radio']),
 .convertforms .cf-input:not([type='checkbox']):not([type='radio']) {
-    @apply block w-full px-3 py-2.5 text-gray-700 placeholder-gray-600 bg-white border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500;
+    @apply block w-full px-3 py-2.5 rounded-lg placeholder-primary/90 bg-white border border-primary/25 shadow-md appearance-none focus:outline-none focus:ring-1 focus:ring-secondary focus:border-secondary;
 }
 
-.convertforms .cf-btn {
-    @apply btn btn-primary;
+.convertforms .cf-btn,
+.convertforms button[type='submit'] {
+    @apply btn btn-outline;
+}
+
+.convertforms .cf-text-right {
+    @apply text-right;
+}
+
+.convertforms .captcha-container {
+    @apply flex gap-2 items-center;
+}
+
+.convertforms .captcha-equation {
+    @apply shrink-0;
+}
+
+.convertforms .cf-required-label {
+    @apply text-red-500;
+}
+
+/* Response */
+.convertforms.cf-success.cf-success-hideform .cf-response {
+    @apply mb-0;
+}
+.convertforms.cf-success.cf-success-hideform .cf-fields,
+.convertforms.cf-success.cf-success-hideform .cf-footer {
+    @apply hidden;
+}
+.convertforms.cf-success.cf-success-hidetext .cf-content-wrap {
+    @apply hidden;
+}
+.convertforms .cf-response {
+    @apply mb-12 rounded-lg p-6 w-full text-center hidden;
+}
+.convertforms .cf-response p {
+    @apply m-0 p-0;
+}
+
+.convertforms.cf-success .cf-response {
+    @apply bg-green-500 text-white block;
+}
+.convertforms.cf-error .cf-response {
+    @apply bg-red-500 text-white block;
+}
+
+/* Spinner */
+.convertforms .cf-spinner-container {
+    @apply invisible absolute flex items-center justify-center w-full h-full text-[10px] left-0 top-0;
+}
+.convertforms.cf-working .cf-spinner-container {
+    @apply visible;
+}
+.convertforms.cf-working .cf-btn-text {
+    @apply invisible;
+}
+.convertforms .cf-spinner > span {
+    @apply w-2.5 h-2.5 bg-current inline-block animate-[cf-bouncedelay_1s_infinite_ease-in-out_both] mx-[3px] my-0 rounded-[100%];
+}
+.convertforms .cf-spinner .bounce1 {
+    @apply [animation-delay:-0.32s];
+}
+.convertforms .cf-spinner .bounce2 {
+    @apply [animation-delay:-0.16s];
+}
+
+/* Recaptcha */
+.convertforms .cf-recaptcha-v3-text-badge {
+    @apply text-[11px] text-[#999] m-0;
+}
+.convertforms .cf-recaptcha-v3-text-badge a {
+    @apply text-[#999] no-underline hover:underline;
+}
+
+/* Animation */
+@-webkit-keyframes cf-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+    }
+}
+@keyframes cf-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
