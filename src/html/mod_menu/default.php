@@ -20,10 +20,10 @@ if ($tagId = $params->get('tag_id', '')) {
 
 // The menu class is deprecated. Use mod-menu instead
 ?>
-<ul class="f-header__list flex flex-col justify-center grow gap-1 lg:gap-8 lg:flex-row">
+<ul class="flex lg:flex-row flex-col justify-end gap-1 lg:gap-8 f-header__list grow">
     <?php foreach ($list as $i => &$item) {
         $itemParams = $item->getParams();
-        $class      = 'f-header__item item-' . $item->id;
+        $class = 'f-header__item item-' . $item->id;
 
         if ($item->id == $default_id) {
             $class .= ' default';
@@ -58,7 +58,7 @@ if ($tagId = $params->get('tag_id', '')) {
         }
 
         if ($item->deeper) {
-            echo '<li class="' . $class . '"><button class="f-header__dropdown-control js-f-header__dropdown-control text-inherit"><span>';
+            echo '<li class="' . $class . '"><button class="text-inherit f-header__dropdown-control js-f-header__dropdown-control"><span>';
         } else {
             echo '<li class="' . $class . '">';
         }
@@ -77,12 +77,12 @@ if ($tagId = $params->get('tag_id', '')) {
         endswitch;
 
         if ($item->deeper) {
-            echo '</span><svg class="f-header__dropdown-icon icon h-[18px] w-[18px] inline-block text-inherit leading-none shrink-0" aria-hidden="true" viewBox="0 0 16 16"><polyline fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="3.5,6.5 8,11 12.5,6.5 "></polyline></svg></button>';
+            echo '</span><svg class="inline-block w-[18px] h-[18px] text-inherit leading-none f-header__dropdown-icon icon shrink-0" aria-hidden="true" viewBox="0 0 16 16"><polyline fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="3.5,6.5 8,11 12.5,6.5 "></polyline></svg></button>';
         }
 
         // The next item is deeper.
         if ($item->deeper) {
-            echo '<ul class="mod-menu__sub f-header__dropdown bg-primary">';
+            echo '<ul class="mod-menu__sub f-header__dropdown">';
         } elseif ($item->shallower) {
             // The next item is shallower.
             echo '</li>';

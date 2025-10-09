@@ -12,6 +12,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
@@ -37,6 +38,11 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
         . ($pageclass ? ' ' . $pageclass : '')
         . ($this->direction == 'rtl' ? ' rtl' : '');
     ?>">
+
+        <a href="#main-content"
+            class="sr-only-focusable focus:not-sr-only inline-block focus:top-4 focus:left-4 z-50 focus:!absolute bg-white px-6 py-4 rounded text-black">
+            <?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_JUMPTOCONTENT"); ?>
+        </a>
 
         <?php if ($templateparams["pagePreloader"] == 1): ?>
             <?php echo LayoutHelper::render('template.preloader'); ?>

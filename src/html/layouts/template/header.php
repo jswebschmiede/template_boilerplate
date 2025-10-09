@@ -27,13 +27,15 @@ $home = $displayData['home'];
 ?>
 
 <header
-    class="f-header bg-white absolute top-0 left-0 js-f-header w-full h-(--f-header-height) z-[3] <?php echo ((bool) $templateparams['stickyHeader']) ? 'f-header--sticky' : null; ?>"
+    class="f-header bg-white absolute top-0 flex items-center left-0 js-f-header w-full h-(--f-header-height) z-[3] <?php echo ((bool) $templateparams['stickyHeader']) ? 'f-header--sticky' : null; ?>"
     data-element="header">
     <div class="mx-auto w-full-p-1 lg:w-full-p-2 max-w-big f-header__mobile-content">
         <?php if ($home): ?>
-            <?php if ((bool) $templateparams['brand']): ?>
-                <?php echo $logo; ?>
-            <?php endif; ?>
+            <div class="f-header__logo">
+                <?php if ((bool) $templateparams['brand']): ?>
+                    <?php echo $logo; ?>
+                <?php endif; ?>
+            </div>
         <?php else: ?>
             <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
                 <?php if ((bool) $templateparams['brand']): ?>
@@ -51,9 +53,11 @@ $home = $displayData['home'];
         <div class="lg:justify-between f-header__nav-grid mx-auto w-full-p-1 lg:w-full-p-2 max-w-big">
             <div class="f-header__nav-logo-wrapper grow">
                 <?php if ($home): ?>
-                    <?php if ((bool) $templateparams['brand']): ?>
-                        <?php echo $logo; ?>
-                    <?php endif; ?>
+                    <div class="f-header__logo">
+                        <?php if ((bool) $templateparams['brand']): ?>
+                            <?php echo $logo; ?>
+                        <?php endif; ?>
+                    </div>
                 <?php else: ?>
                     <a href="<?php echo Uri::base(); ?>" class="f-header__logo">
                         <?php if ((bool) $templateparams['brand']): ?>

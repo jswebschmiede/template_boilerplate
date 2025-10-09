@@ -17,10 +17,14 @@ div.cc-window {
     @apply !rounded-sm !font-sans !shadow-lg;
 }
 div.cc-window.cc-floating.cc-center-xtd {
-    @apply !fixed !z-[60] !-mt-8 shadow-lg;
+    @apply !fixed !z-[60] !-mt-8 shadow-lg w-[calc(100%-2rem)] mx-auto md:w-full !left-0 !right-0 md:!left-1/2 md:!right-auto md:!top-1/2 md:!-translate-y-1/2;
 }
 div.cc-window.gdpr-prevent-scrolling {
     @apply !max-h-[85%];
+}
+
+div.gdbr-content {
+    @apply h-full max-h-45 md:max-h-80 overflow-y-auto;
 }
 
 div.cc-checkboxes-container {
@@ -84,6 +88,9 @@ ul.cc-compliance-list > li > .cc-btn {
 div.cc-center-xtd div.cc-checkbox-container input.cc-cookie-checkbox + span {
     @apply !rounded-lg;
 }
+div.cc-center-xtd {
+    @apply !top-[13%] md:!top-1/2;
+}
 div.cc-checkboxes-container input.cc-cookie-checkbox + span::before {
     @apply !h-[10px] !w-[10px] !rounded-full;
 }
@@ -100,7 +107,7 @@ div.cc-checkboxes-container input.cc-cookie-checkbox:checked + span::before {
 }
 
 .cc-revoke {
-    @apply !shadow-lg !bg-secondary !rounded-full !bottom-5 !left-5 !w-12 !h-12 !flex !z-10 !items-center !justify-center !text-white;
+    @apply !shadow-lg !bg-secondary md:h-12 md:w-12 h-10 w-10 !rounded-full !bottom-5 !left-5 !flex !z-10 !items-center !justify-center !text-white;
 }
 
 .cc-revoke > * {
@@ -111,5 +118,5 @@ div.cc-revoke::before {
     background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 512 512' viewBox='0 0 512 512' fill='white'%3E%3Cpath d='m85.9 98.6c47-43 107.5-66.6 170.1-66.6s123.1 23.6 170.1 66.6c3.1 2.8 6.9 4.2 10.8 4.2 4.4 0 8.7-1.7 11.8-5.2 6-6.5 5.5-16.7-1-22.6-53-48.4-121.1-75-191.7-75s-138.7 26.6-191.7 74.9c-6.5 6-7 16.1-1 22.6 5.9 6.5 16 7 22.6 1.1z'/%3E%3Cpath d='m477.3 182.4c-50.4-75-133.1-119.8-221.3-119.8s-170.9 44.8-221.3 119.8c-4.9 7.3-3 17.3 4.4 22.2 7.3 4.9 17.3 3 22.2-4.4 44.4-66.1 117.2-105.6 194.7-105.6s150.3 39.5 194.7 105.6c3.1 4.6 8.1 7.1 13.3 7.1 3.1 0 6.2-.9 8.9-2.7 7.4-4.9 9.3-14.9 4.4-22.2z'/%3E%3Cpath d='m140.6 339.5c0-66 51.8-119.7 115.4-119.7s115.4 53.7 115.4 119.7c0 8.8 7.2 16 16 16s16-7.2 16-16c0-83.6-66.1-151.7-147.4-151.7s-147.4 68-147.4 151.7c0 80.6 82 164.3 85.5 167.8 3.1 3.2 7.3 4.7 11.4 4.7s8.1-1.5 11.3-4.6c6.3-6.2 6.3-16.4.1-22.6-.8-.8-76.3-77.8-76.3-145.3z'/%3E%3Cpath d='m269.8 125.7c-57-3.8-111.6 15.8-153.7 55.1-43.3 40.6-68.1 98.4-68.1 158.7 0 49.6 16.8 97.9 47.4 136.1 5.5 6.9 15.6 8 22.5 2.5s8-15.6 2.5-22.5c-26.1-32.5-40.4-73.8-40.4-116.1 0-51.5 21.2-100.8 58.1-135.3 35.6-33.2 81.6-49.8 129.7-46.6 92.1 6.1 164.3 89 164.3 188.7v3.6c0 25.7-20 46.6-44.7 46.6s-44.6-20.9-44.6-46.6v-10.4c0-24.3-9.4-47-26.4-64-16.3-16.2-37.7-25.1-60.4-25.1h-.4c-23.2.1-44.8 10-60.8 27.9-18.4 20.6-27.6 50-24.5 78.9 8.6 81.5 97.9 154.8 136.3 154.8 8.8 0 16-7.1 16-16s-7.2-16-16-16c-21 0-97.5-59.6-104.5-126.1-2.1-20 4.1-40.2 16.6-54.2 7-7.8 19.1-17.2 37.2-17.3h.3c14.1 0 27.6 5.6 37.8 15.8 10.9 10.9 16.9 25.5 16.9 41.3v10.4c0 43.3 34.4 78.6 76.6 78.6s76.7-35.3 76.7-78.6v-3.6c-.2-116.5-85.5-213.4-194.4-220.6z'/%3E%3Cpath d='m364.9 446.7c-41.9 0-95.2-56.3-95.2-119.7 0-8.8-7.2-16-16-16s-16 7.2-16 16c0 81.7 69.9 151.7 127.2 151.7 8.8 0 16-7.2 16-16s-7.2-16-16-16z'/%3E%3C/svg%3E");
 
     content: '' !important;
-    @apply !bg-no-repeat !bg-center !bg-cover !block !w-6 !h-6;
+    @apply !bg-no-repeat !bg-center !bg-cover !block !w-5 !h-5 md:!w-6 md:!h-6;
 }

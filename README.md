@@ -6,6 +6,7 @@ Template Boilerplate is a base template for Joomla, serving as a starting point 
 
 > [!WARNING]
 > because this template uses tailwind css, the basic styling of joomla components may be not shown correctly. you have to rewrite the css for the components.
+> this is not a production ready template. it is a template for development purposes.
 
 ## Features
 

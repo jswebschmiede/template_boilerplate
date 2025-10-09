@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+/** 
+ * watch for changes in the joomla_components directory
+ */
+@source '../../../../../joomla_components/';
+
 @import './vendor/theme.css';
 
 /**
@@ -8,21 +13,21 @@
 @import './vendor/fonts.css';
 
 /**
-   * This injects Tailwind's base styles and any base styles registered by
-   * plugins, then adds custom base styles.
-   */
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins, then adds custom base styles.
+*/
 @import './vendor/base.css';
 
 /**
    * This injects Tailwind's utility classes and any utility classes registered
    * by plugins, then adds custom utility classes.
-   */
+*/
 @import './vendor/utilities.css';
 
 /**
-   * This injects Tailwind's component classes and any component classes
-   * registered by plugins, then adds custom component classes.
-   */
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins, then adds custom component classes.
+*/
 @import-glob "./vendor/joomla/**" layer(components);
 @import-glob "./vendor/components/**" layer(components);
 @import './vendor/custom.css' layer(components);

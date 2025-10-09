@@ -93,3 +93,15 @@ ul#finder-filter-select-dates li.filter-date select.filter-date-operator {
 #system-message-container joomla-alert .joomla-alert--close {
     @apply absolute top-1/2 right-3 -translate-y-1/2 text-[1.85rem];
 }
+
+.list-group {
+    @apply flex flex-col gap-2;
+}
+
+.list-group-item {
+    @apply flex items-center gap-2;
+}
+
+.list-group-item-action {
+    @apply flex items-center gap-2;
+}

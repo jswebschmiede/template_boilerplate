@@ -8,13 +8,13 @@ Usage: codyhouse.co/license
 -------------------------------- */
 :root {
     --f-header-height: 50px;
-    --f-header-logo-width: 140px;
+    --f-header-logo-width: 160px;
 }
 
-@media (min-width: theme('breakpoint.lg')) {
+@variant lg {
     :root {
         --f-header-height: 90px;
-        --f-header-logo-width: 160px;
+        --f-header-logo-width: 200px;
     }
 }
 
@@ -117,7 +117,7 @@ Usage: codyhouse.co/license
 }
 
 /* Desktop */
-@media (min-width: theme('breakpoint.lg')) {
+@variant lg {
     .f-header::before {
         @apply content-["desktop"];
     }
