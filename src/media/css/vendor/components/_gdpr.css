@@ -85,12 +85,22 @@ ul.cc-compliance-list > li > .cc-btn {
 }
 
 /* Checkboxes */
+fieldset.cc-service-list-title div.cc-service-descriptions {
+    @apply !my-4;
+}
+
+fieldset.cc-service-list-title legend {
+    @apply !min-w-fit !p-2.5 !ml-0;
+}
+
+fieldset.cc-cookie-list-title .gdpr_cookie_switcher label.gdpr_onoffswitch-label,
 div.cc-center-xtd div.cc-checkbox-container input.cc-cookie-checkbox + span {
     @apply !rounded-lg;
 }
 div.cc-center-xtd {
     @apply !top-[13%] md:!top-1/2;
 }
+fieldset.cc-cookie-list-title div.gdpr_cookie_switcher .gdpr_onoffswitch-switch,
 div.cc-checkboxes-container input.cc-cookie-checkbox + span::before {
     @apply !h-[10px] !w-[10px] !rounded-full;
 }
