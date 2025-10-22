@@ -105,3 +105,19 @@ ul#finder-filter-select-dates li.filter-date select.filter-date-operator {
 .list-group-item-action {
     @apply flex items-center gap-2;
 }
+
+.tags {
+    @apply flex flex-wrap gap-2 items-center list-none !pl-0;
+}
+
+.tags li {
+    @apply inline-block;
+}
+
+.tags li a {
+    @apply inline-block;
+}
+
+.tags li a:hover {
+    @apply text-primary;
+}

@@ -51,7 +51,7 @@
 }
 
 @utility btn-sm {
-    @apply px-2 py-1 text-sm;
+    @apply px-2 py-1 text-sm h-8 max-h-8;
 }
 
 @utility btn-primary {
@@ -75,6 +75,38 @@
 
     &:hover {
         @apply bg-primary/80 border-primary/80;
+    }
+}
+
+@utility btn-info {
+    @apply bg-blue-500 text-white;
+
+    &:hover {
+        @apply bg-blue-600;
+    }
+}
+
+@utility btn-warning {
+    @apply bg-yellow-500 text-white;
+
+    &:hover {
+        @apply bg-yellow-600;
+    }
+}
+
+@utility btn-success {
+    @apply bg-green-500 text-white;
+
+    &:hover {
+        @apply bg-green-600;
+    }
+}
+
+@utility btn-danger {
+    @apply bg-red-500 text-white;
+
+    &:hover {
+        @apply bg-red-600;
     }
 }
 
@@ -102,4 +134,20 @@
 
 @utility animate-button-pop {
     animation: button-pop 0.25s ease-out;
+}
+
+@utility text-info {
+    @apply text-blue-500;
+}
+
+@utility text-warning {
+    @apply text-yellow-500;
+}
+
+@utility text-success {
+    @apply text-green-500;
+}
+
+@utility text-danger {
+    @apply text-red-500;
 }

@@ -5,6 +5,8 @@
  */
 @source '../../../../../joomla_components/';
 
+@source inline('{btn,btn-sm,btn-primary,btn-secondary,btn-outline,btn-info,btn-warning,btn-success,btn-danger,text-info,text-warning,text-success,text-danger}');
+
 @import './vendor/theme.css';
 
 /**
