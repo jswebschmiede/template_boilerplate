@@ -135,7 +135,7 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
         ]); ?>
 
         <?php if ($templateparams["backTop"] == 1): ?>
-            <?php echo LayoutHelper::render('template.backtop'); ?>
+            <?php echo LayoutHelper::render('template.backtop-v2'); ?>
         <?php endif; ?>
 
         <jdoc:include type="modules" name="debug" />

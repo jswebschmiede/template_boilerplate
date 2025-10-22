@@ -4,6 +4,7 @@ import './vendor/progress-to-top';
 import './vendor/reveal-effects';
 import './vendor/anim-menu-btn';
 import './vendor/flexi-header';
+import ProgressToTopV2 from './vendor/progress-to-top-v2';
 import GdprClassObserver from './vendor/gdpr-class-observer';
 import StickyHeader from './vendor/sticky-header';
 
@@ -11,6 +12,14 @@ import '../css/app.css';
 
 // init
 (() => {
+    /**
+     * Progress to top v2
+     */
+    const progressToTopV2 = document.querySelector('#scroll-top');
+    if (progressToTopV2) {
+        new ProgressToTopV2(progressToTopV2);
+    }
+
     /**
      * Sticky Header
      */

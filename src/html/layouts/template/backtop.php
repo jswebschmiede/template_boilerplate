@@ -14,11 +14,11 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Language\Text;
 ?>
 
-<div class='invisible right-5 2xl:right-12 bottom-5 z-40 fixed flex justify-center items-center bg-white opacity-0 rounded-[9999px] w-[3rem] h-[3rem] transition-all translate-y-[5px] cursor-pointer progress-wrap'
+<div class='invisible right-5 bottom-5 z-40 fixed flex justify-center items-center bg-white opacity-0 rounded-[9999px] w-[3rem] h-[3rem] transition-all translate-y-[5px] cursor-pointer progress-wrap'
     aria-label='<?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_BACKTOTOP_LABEL"); ?>'
     title='<?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_BACKTOTOP"); ?>'>
     <svg class='svg-content' width='100%' height='100%' viewBox='-1 -1 102 102'>
-        <path class="box-border stroke-[5px] stroke-primary-500 transition-all" fill='none'
+        <path class="box-border stroke-[5px] stroke-primary transition-all" fill='none'
             d='M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98'
             style='transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 0.351157;'>
         </path>

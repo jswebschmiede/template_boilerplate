@@ -40,7 +40,7 @@ Usage: codyhouse.co/license
         height: var(--circle-loader-v1-size);
         border-width: var(--circle-loader-v1-stroke-width);
         border-style: solid;
-        border-color: rgba(var(--color-primary-400), 0.2);
+        border-color: rgba(var(--color-primary), 0.2);
         border-radius: 50%;
     }
     .circle-loader--v1 .circle-loader__circle::after {
@@ -53,7 +53,7 @@ Usage: codyhouse.co/license
         border-width: inherit;
         border-style: inherit;
         border-color: transparent;
-        border-top-color: rgb(var(--color-primary-400));
+        border-top-color: var(--color-primary);
         border-radius: inherit;
     }
 }
@@ -74,7 +74,7 @@ Usage: codyhouse.co/license
         display: block;
         width: var(--circle-loader-v2-size);
         height: var(--circle-loader-v2-size);
-        color: rgb(var(--color-primary-400));
+        color: var(--color-primary);
     }
     .circle-loader--v2 .circle-loader__svg > * {
         stroke-width: var(--circle-loader-v2-stroke-width);
@@ -124,7 +124,7 @@ Usage: codyhouse.co/license
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-color: rgb(var(--color-primary-400));
+        background-color: var(--color-primary);
         transform: scale(0);
         opacity: 0.8;
         will-change: transform, opacity;
@@ -160,10 +160,10 @@ Usage: codyhouse.co/license
         clip-path: circle(calc(0.5 * var(--circle-loader-v4-size)));
     }
     .circle-loader--v4 .circle-loader__circle--1st {
-        background-color: rgb(var(--color-gray-400));
+        background-color: var(--color-primary);
     }
     .circle-loader--v4 .circle-loader__circle--2nd {
-        background-color: rgb(var(--color-primary-400));
+        background-color: var(--color-primary);
         will-change: transform;
         transform-origin: 50% 100%;
         animation: circle-loader-4 1.2s infinite cubic-bezier(0.23, 0.9, 0.75, 0.1);
@@ -190,7 +190,7 @@ Usage: codyhouse.co/license
         left: calc(50% - 0.140625em);
         width: 0.28125em;
         height: 0.28125em;
-        background-color: rgb(var(--color-primary-400));
+        background-color: var(--color-primary);
         border-radius: 50%;
         animation: circle-loader-5-ball 0.8s infinite;
     }
@@ -200,7 +200,7 @@ Usage: codyhouse.co/license
         left: calc(50% - 0.15625em);
         width: 0.3125em;
         height: 0.3125em;
-        background-color: rgb(var(--color-gray-300));
+        background-color: var(--color-primary);
         border-radius: 50%;
         transform: scaleY(0.4) scaleX(1.2);
         animation: circle-loader-5-shadow 0.8s infinite;
@@ -222,17 +222,17 @@ Usage: codyhouse.co/license
 @keyframes circle-loader-5-shadow {
     0% {
         transform: scaleY(0.4) scaleX(1.2);
-        background-color: rgb(var(--color-gray-300));
+        background-color: var(--color-primary);
         animation-timing-function: cubic-bezier(0.61, 0.12, 0.85, 0.4);
     }
     50% {
         transform: scaleY(0.2) scaleX(0.6);
-        background-color: rgb(var(--color-gray-400));
+        background-color: var(--color-primary);
         animation-timing-function: cubic-bezier(0.12, 0.59, 0.46, 0.95);
     }
     100% {
         transform: scaleY(0.4) scaleX(1.2);
-        background-color: rgb(var(--color-gray-300));
+        background-color: var(--color-primary);
     }
 }
 @supports ((-webkit-animation-name: this) or (animation-name: this)) {
@@ -240,7 +240,7 @@ Usage: codyhouse.co/license
         display: block;
         width: var(--circle-loader-v6-size);
         height: var(--circle-loader-v6-size);
-        color: rgb(var(--color-primary-400));
+        color: var(--color-primary);
     }
     .circle-loader--v6 .circle-loader__fill {
         stroke-width: 8px;
