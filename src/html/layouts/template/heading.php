@@ -27,20 +27,20 @@ $headerAttribs['class'] = 'mb-8';
 
 // Only output a header class if one is set
 if ($headerClass !== '') {
-	$headerAttribs['class'] .= $headerClass;
+    $headerAttribs['class'] .= $headerClass;
 }
 if ($moduleId !== '') {
-	$moduleAttribs['id'] = $moduleId;
+    $moduleAttribs['id'] = $moduleId;
 }
 
 // Only add aria if the moduleTag is not a div
 if ($moduleTag !== 'div') {
-	if ($module->showtitle):
-		$moduleAttribs['aria-labelledby'] = 'mod-' . $module->id;
-		$headerAttribs['id'] = 'mod-' . $module->id;
-	else:
-		$moduleAttribs['aria-label'] = $module->title;
-	endif;
+    if ($module->showtitle) :
+        $moduleAttribs['aria-labelledby'] = 'mod-' . $module->id;
+        $headerAttribs['id'] = 'mod-' . $module->id;
+    else :
+        $moduleAttribs['aria-label'] = $module->title;
+    endif;
 }
 
 $header = '<' . $headerTag . ' ' . ArrayHelper::toString($headerAttribs) . '>' . $module->title . '</' . $headerTag . '>';

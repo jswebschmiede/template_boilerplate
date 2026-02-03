@@ -25,7 +25,7 @@ $templateparams = $displayData['templateparams'];
 
 <footer data-element="footer">
     <div class="container">
-        <?php if ($doc->countModules('footer')): ?>
+        <?php if ($doc->countModules('footer')) : ?>
             <nav role="navigation">
                 <jdoc:include type="modules" name="footer" style="none" />
             </nav>

@@ -16,7 +16,7 @@ use Joomla\CMS\Language\Text;
 
 <div id="scroll-top"
     class="invisible right-5 bottom-5 z-50 fixed flex justify-center items-center opacity-0 w-12 h-12 transition-all translate-y-[5px] scroll-top cursor-pointer"
-    href="#top" title="<?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_BACKTOTOP"); ?>"
+    title="<?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_BACKTOTOP"); ?>"
     aria-label="<?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_BACKTOTOP_LABEL"); ?>" role="button">
 
     <div
