@@ -8,146 +8,175 @@
  */
 
 @utility alignfull {
-    width: 100vw;
-    margin: 0 calc(50% - 50vw);
+	@apply max-w-none w-screen -ml-[calc(50vw-50%)] -mr-[calc(50vw-50%)];
+}
+
+@utility reset-alignfull {
+	@apply w-full max-w-full ml-0 mr-0;
 }
 
 @utility btn {
-    background-color: transparent;
-    display: inline-flex;
-    border: 1px solid transparent;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: 2.882rem;
-    max-height: 2.882rem;
-    text-align: center;
-    line-height: 1.5;
-    vertical-align: middle;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    font-size: inherit;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    transition-duration: 0.25s;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    transition-property: color, background-color, border-color, opacity, box-shadow, transform;
-    user-select: none;
-    will-change: color, background-color, border-color, opacity, box-shadow, transform;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    animation: button-pop 0.25s ease-out;
+	background-color: transparent;
+	display: inline-flex;
+	border: 1px solid transparent;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	height: 2.882rem;
+	max-height: 2.882rem;
+	text-align: center;
+	line-height: 1.5;
+	vertical-align: middle;
+	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	flex-wrap: wrap;
+	font-size: inherit;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+	user-select: none;
+	will-change: color, background-color, border-color, opacity, box-shadow, transform;
+	touch-action: manipulation;
+	box-shadow:
+		0 0 #0000,
+		0 0 #0000,
+		0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
-    &:hover {
-        @apply no-underline;
-    }
+	&:hover {
+		@apply no-underline;
+	}
 
-    &:active:hover,
-    &:active:focus {
-        animation: button-pop 0s ease-out;
-        transform: scale(0.97);
-    }
+	&:active:hover,
+	&:active:focus {
+		translate: 0 0.5px;
+	}
 }
 
 @utility btn-sm {
-    @apply px-2 py-1 text-sm h-8 max-h-8;
+	@apply px-2 py-1 text-sm h-8 max-h-8;
 }
 
 @utility btn-primary {
-    @apply bg-primary text-white;
+	@apply bg-primary text-white;
 
-    &:hover {
-        @apply bg-primary/80;
-    }
+	&:hover {
+		@apply bg-primary/80;
+	}
 }
 
 @utility btn-secondary {
-    @apply bg-secondary text-white;
+	@apply bg-secondary text-white;
 
-    &:hover {
-        @apply bg-secondary/80;
-    }
+	&:hover {
+		@apply bg-secondary/80;
+	}
 }
 
 @utility btn-outline {
-    @apply border-primary text-primary;
+	@apply border-primary text-primary;
 
-    &:hover {
-        @apply bg-primary/80 border-primary/80;
-    }
+	&:hover {
+		@apply bg-primary/80 border-primary/80;
+	}
 }
 
 @utility btn-info {
-    @apply bg-blue-500 text-white;
+	@apply bg-blue-500 text-white;
 
-    &:hover {
-        @apply bg-blue-600;
-    }
+	&:hover {
+		@apply bg-blue-600;
+	}
 }
 
 @utility btn-warning {
-    @apply bg-yellow-500 text-white;
+	@apply bg-yellow-500 text-white;
 
-    &:hover {
-        @apply bg-yellow-600;
-    }
+	&:hover {
+		@apply bg-yellow-600;
+	}
 }
 
 @utility btn-success {
-    @apply bg-green-500 text-white;
+	@apply bg-green-500 text-white;
 
-    &:hover {
-        @apply bg-green-600;
-    }
+	&:hover {
+		@apply bg-green-600;
+	}
 }
 
 @utility btn-danger {
-    @apply bg-red-500 text-white;
+	@apply bg-red-500 text-white;
 
-    &:hover {
-        @apply bg-red-600;
-    }
+	&:hover {
+		@apply bg-red-600;
+	}
 }
 
 /* Shadows */
 @utility shadow-inner-xl {
-    box-shadow: inset 0px 3px 23px rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0px 3px 23px rgba(0, 0, 0, 0.25);
 }
 
 @utility shadow-inner-lg {
-    box-shadow: inset 0px 3px 15px rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0px 3px 15px rgba(0, 0, 0, 0.25);
 }
 
 @utility shadow-inner-md {
-    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
 @utility shadow-inner-sm {
-    box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.25);
 }
 
 /* Animations */
 @utility animate-slide-down {
-    animation: slide-down 0.35s ease-out;
+	animation: slide-down 0.35s ease-out;
 }
 
 @utility animate-button-pop {
-    animation: button-pop 0.25s ease-out;
+	animation: button-pop 0.25s ease-out;
 }
 
 @utility text-info {
-    @apply text-blue-500;
+	@apply text-blue-500;
 }
 
 @utility text-warning {
-    @apply text-yellow-500;
+	@apply text-yellow-500;
 }
 
 @utility text-success {
-    @apply text-green-500;
+	@apply text-green-500;
 }
 
 @utility text-danger {
-    @apply text-red-500;
+	@apply text-red-500;
+}
+
+@utility badge {
+	@apply inline-flex w-fit items-center justify-center px-2 py-1 rounded-2xl text-sm bg-primary border-2 border-primary text-white leading-snug;
+}
+
+@utility list-style {
+	@apply list-none relative ps-7 lg:ps-8 before:absolute before:start-0 before:top-0 before:font-fa-classic before:leading-loose before:text-primary before:text-sm lg:before:text-base before:font-black;
+}
+
+@utility list-checkmark {
+	@apply before:content-["\f00c"];
+}
+
+@utility list-checkmark-bullet {
+	@apply before:content-["\f058"];
+}
+
+@utility list-info {
+	@apply before:content-["\f05a"];
+}
+
+@utility list-circle {
+	@apply before:content-["\f111"] before:font-normal;
 }

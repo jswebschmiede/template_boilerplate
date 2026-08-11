@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
-/** 
- * watch for changes in the joomla_components directory
- */
-@source '../../../../../joomla_components/';
-
 @source inline('{btn,btn-sm,btn-primary,btn-secondary,btn-outline,btn-info,btn-warning,btn-success,btn-danger,text-info,text-warning,text-success,text-danger}');
+
+@plugin 'tailwind-scrollbar' {
+	nocompatible: true;
+	preferredstrategy: 'pseudoelements';
+}
 
 @import './vendor/theme.css';
 
@@ -30,6 +30,6 @@
  * This injects Tailwind's component classes and any component classes
  * registered by plugins, then adds custom component classes.
 */
-@import-glob "./vendor/joomla/**" layer(components);
-@import-glob "./vendor/components/**" layer(components);
+@import-glob "./vendor/joomla/**/*.css";
+@import-glob "./vendor/components/**/*.css";
 @import './vendor/custom.css' layer(components);
