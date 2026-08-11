@@ -40,7 +40,7 @@ $errorCode = $this->error->getCode();
         . ($this->direction == 'rtl' ? ' rtl' : '');
     ?>">
 
-        <?php if ($templateparams["pagePreloader"] == 1): ?>
+        <?php if ($templateparams["pagePreloader"] == 1) : ?>
             <?php echo LayoutHelper::render('tempalte.preloader'); ?>
         <?php endif; ?>
 
@@ -49,19 +49,19 @@ $errorCode = $this->error->getCode();
             'logo' => $logo
         ]); ?>
 
-        <?php if ($this->countModules('header', true)): ?>
+        <?php if ($this->countModules('header', true)) : ?>
             <jdoc:include type="modules" name="header" style="none" />
         <?php endif ?>
 
         <main data-element="content">
-            <?php if ($this->countModules('error-' . $errorCode)): ?>
+            <?php if ($this->countModules('error-' . $errorCode)) : ?>
                 <div class="container">
                     <jdoc:include type="message" />
                     <main>
                         <jdoc:include type="modules" name="error-<?php echo $errorCode; ?>" style="none" />
                     </main>
                 </div>
-            <?php else: ?>
+            <?php else : ?>
                 <div class="mx-auto w-full-p-1 lg:w-full-p-2 pt-12 lg:pt-24 max-w-wide">
                     <div class="entry-content">
                         <h1 class="page-header"><?php echo Text::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
@@ -91,17 +91,17 @@ $errorCode = $this->error->getCode();
                                 </main>
                             </div>
                         </div>
-                    <?php endif; ?>
-                    <?php if ($this->debug): ?>
+            <?php endif; ?>
+                    <?php if ($this->debug) : ?>
                         <div>
                             <?php echo $this->renderBacktrace(); ?>
                             <?php // Check if there are more Exceptions and render their data as well ?>
-                            <?php if ($this->error->getPrevious()): ?>
+                            <?php if ($this->error->getPrevious()) : ?>
                                 <?php $loop = true; ?>
                                 <?php // Reference $this->error here and in the loop as setError() assigns errors to this property and we need this for the backtrace to work correctly ?>
                                 <?php // Make the first assignment to setError() outside the loop so the loop does not skip Exceptions ?>
                                 <?php $this->setError($this->error->getPrevious()); ?>
-                                <?php while ($loop === true): ?>
+                                <?php while ($loop === true) : ?>
                                     <p><strong><?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?></strong></p>
                                     <p><?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></p>
                                     <?php echo $this->renderBacktrace(); ?>
@@ -113,7 +113,7 @@ $errorCode = $this->error->getCode();
                         </div>
                     </div>
                 </div>
-            <?php endif; ?>
+                    <?php endif; ?>
         </main>
         </main>
 
@@ -121,7 +121,7 @@ $errorCode = $this->error->getCode();
             'templateparams' => $templateparams
         ]); ?>
 
-        <?php if ($templateparams["backTop"] == 1): ?>
+        <?php if ($templateparams["backTop"] == 1) : ?>
             <?php echo LayoutHelper::render('template.backtop'); ?>
         <?php endif; ?>
 

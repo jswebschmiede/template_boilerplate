@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomla.Site
- * @subpackage  Templates.hoennetreff
+ * @subpackage  Templates.template_boilerplate
  *
  * @copyright   (C) 2024. All rights reserved by Jörg Schöneburg
  * @license     MIT License (MIT) see LICENSE.txt
@@ -30,7 +30,7 @@ $moduleAttribs['class'] = 'default bg-gray-100 entry-content wide mt-12 lg:mt-24
 <<?php echo $moduleTag; ?> <?php echo ArrayHelper::toString($moduleAttribs); ?>>
 
     <div class="mx-auto w-full-p-1 lg:w-full-p-2 max-w-wide">
-        <?php if ($module->showtitle): ?>
+        <?php if ($module->showtitle) : ?>
             <?php echo LayoutHelper::render('template.heading', ['params' => $params, 'module' => $module, 'attribs' => $attribs]); ?>
         <?php endif; ?>
 

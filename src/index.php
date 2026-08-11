@@ -44,7 +44,7 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
             <?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_JUMPTOCONTENT"); ?>
         </a>
 
-        <?php if ($templateparams["pagePreloader"] == 1): ?>
+        <?php if ($templateparams["pagePreloader"] == 1) : ?>
             <?php echo LayoutHelper::render('template.preloader'); ?>
         <?php endif; ?>
 
@@ -54,18 +54,18 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
             'home' => $home
         ]); ?>
 
-        <?php if ($this->countModules('header', true)): ?>
+        <?php if ($this->countModules('header', true)) : ?>
             <jdoc:include type="modules" name="header" style="none" />
         <?php endif ?>
 
         <main id="content" data-element="content">
-            <?php if ($this->countModules('content-top', true)): ?>
+            <?php if ($this->countModules('content-top', true)) : ?>
                 <section id="content-top" class="content-top">
                     <jdoc:include type="modules" name="content-top" style="default" />
                 </section>
             <?php endif ?>
 
-            <?php if (Factory::getApplication()->getMessageQueue()): ?>
+            <?php if (Factory::getApplication()->getMessageQueue()) : ?>
                 <div class="mx-auto py-4 max-w-content">
                     <jdoc:include type="message" />
                 </div>
@@ -77,53 +77,53 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
                 </div>
             </div>
 
-            <?php if ($this->countModules('content-1', true)): ?>
+            <?php if ($this->countModules('content-1', true)) : ?>
                 <section id="content-1" class="content-1">
                     <jdoc:include type="modules" name="content-1" style="default" />
                 </section>
             <?php endif ?>
 
-            <?php if ($this->countModules('content-2', true)): ?>
+            <?php if ($this->countModules('content-2', true)) : ?>
                 <section id="content-2" class="content-2">
                     <jdoc:include type="modules" name="content-2" style="default" />
                 </section>
             <?php endif ?>
 
-            <?php if ($this->countModules('content-3', true)): ?>
+            <?php if ($this->countModules('content-3', true)) : ?>
                 <section id="content-3" class="content-3">
                     <jdoc:include type="modules" name="content-3" style="default" />
                 </section>
             <?php endif ?>
 
-            <?php if ($this->countModules('content-4', true)): ?>
+            <?php if ($this->countModules('content-4', true)) : ?>
                 <section id="content-4" class="content-4">
                     <jdoc:include type="modules" name="content-4" style="default" />
                 </section>
             <?php endif ?>
 
-            <?php if ($this->countModules('content-5', true)): ?>
+            <?php if ($this->countModules('content-5', true)) : ?>
                 <section id="content-5" class="content-5">
                     <jdoc:include type="modules" name="content-5" style="default" />
                 </section>
             <?php endif ?>
 
-            <?php if ($this->countModules('content-6', true)): ?>
+            <?php if ($this->countModules('content-6', true)) : ?>
                 <section id="content-6" class="content-6">
                     <jdoc:include type="modules" name="content-6" style="default" />
                 </section>
             <?php endif ?>
 
-            <?php if ($this->countModules('content-7', true)): ?>
+            <?php if ($this->countModules('content-7', true)) : ?>
                 <section id="content-7" class="content-7">
                     <jdoc:include type="modules" name="content-7" style="default" />
                 </section>
             <?php endif ?>
-            <?php if ($this->countModules('content-8', true)): ?>
+            <?php if ($this->countModules('content-8', true)) : ?>
                 <section id="content-8" class="content-8">
                     <jdoc:include type="modules" name="content-8" style="default" />
                 </section>
             <?php endif ?>
-            <?php if ($this->countModules('content-9', true)): ?>
+            <?php if ($this->countModules('content-9', true)) : ?>
                 <section id="content-9" class="content-9">
                     <jdoc:include type="modules" name="content-9" style="default" />
                 </section>
@@ -134,7 +134,7 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
             'templateparams' => $templateparams
         ]); ?>
 
-        <?php if ($templateparams["backTop"] == 1): ?>
+        <?php if ($templateparams["backTop"] == 1) : ?>
             <?php echo LayoutHelper::render('template.backtop-v2'); ?>
         <?php endif; ?>
 

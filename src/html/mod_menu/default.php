@@ -63,7 +63,7 @@ if ($tagId = $params->get('tag_id', '')) {
             echo '<li class="' . $class . '">';
         }
 
-        switch ($item->type):
+        switch ($item->type) :
             case 'separator':
             case 'component':
             case 'heading':

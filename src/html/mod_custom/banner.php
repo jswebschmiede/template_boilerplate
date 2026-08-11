@@ -27,7 +27,7 @@ if ($params->get('backgroundimage')) {
 <div class="relative flex justify-center items-center bg-cover bg-no-repeat bg-center p-4 h-[430px] md:h-[500px] lg:h-[600px] mod-custom custom banner"
     id="<?php echo $modId; ?>">
 
-    <?php if (!empty($module->content)): ?>
+    <?php if (!empty($module->content)) : ?>
         <div class="z-[2] relative reveal-fx--translate-up reveal-fx">
             <?php echo $module->content; ?>
         </div>

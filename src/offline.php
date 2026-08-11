@@ -9,7 +9,6 @@
  * @author      Jörg Schöneburg <info@joerg-schoeneburg.de> - https://joerg-schoeneburg.de
  */
 
-
 defined('_JEXEC') or die;
 
 // variables
@@ -58,17 +57,17 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
         <div class="mx-auto py-8 max-w-4xl text-center container">
             <div class="bg-white shadow-md p-6 rounded-lg">
                 <div class="mb-6">
-                    <?php if (!empty($logo)): ?>
+                    <?php if (!empty($logo)) : ?>
                         <h1><?php echo $logo; ?></h1>
-                    <?php else: ?>
+                    <?php else : ?>
                         <h1 class="mb-4 text-primary text-4xl"><?php echo $sitename; ?></h1>
                     <?php endif; ?>
-                    <?php if ($app->get('offline_image')): ?>
+                    <?php if ($app->get('offline_image')) : ?>
                         <?php echo HTMLHelper::_('image', $app->get('offline_image'), $sitename, [], false, 0); ?>
                     <?php endif; ?>
-                    <?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) != ''): ?>
+                    <?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) != '') : ?>
                         <p class="text-lg"><?php echo $app->get('offline_message'); ?></p>
-                    <?php elseif ($app->get('display_offline_message', 1) == 2): ?>
+                    <?php elseif ($app->get('display_offline_message', 1) == 2) : ?>
                         <p class="text-lg"><?php echo Text::_('JOFFLINE_MESSAGE'); ?></p>
                     <?php endif; ?>
                 </div>
@@ -81,19 +80,23 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
                             <label for="password" class="mb-2"><?php echo Text::_('JGLOBAL_PASSWORD'); ?></label>
                             <input name="password" class="mb-4 form-input" id="password" type="password">
 
-                            <?php foreach ($extraButtons as $button):
+                            <?php foreach ($extraButtons as $button) :
                                 $dataAttributeKeys = array_filter(array_keys($button), function ($key) {
                                     return substr($key, 0, 5) == 'data-';
                                 });
                                 ?>
                                 <div class="mb-4">
-                                    <button type="button" class="btn btn-primary <?php echo $button['class'] ?? '' ?>" <?php foreach ($dataAttributeKeys as $key): ?>         <?php echo $key ?>="<?php echo $button[$key] ?>" <?php endforeach; ?>     <?php if ($button['onclick']): ?> onclick="<?php echo $button['onclick'] ?>" <?php endif; ?>
+                                    <button type="button" class="btn btn-primary <?php echo $button['class'] ?? '' ?>" <?php foreach ($dataAttributeKeys as $key) :
+                                        ?>         <?php echo $key ?>="<?php echo $button[$key] ?>" <?php
+                                                                                 endforeach; ?>     <?php if ($button['onclick']) :
+    ?> onclick="<?php echo $button['onclick'] ?>" <?php
+                                                                                 endif; ?>
                                         title="<?php echo Text::_($button['label']) ?>" id="<?php echo $button['id'] ?>">
-                                        <?php if (!empty($button['icon'])): ?>
+                                        <?php if (!empty($button['icon'])) : ?>
                                             <span class="<?php echo $button['icon'] ?>"></span>
-                                        <?php elseif (!empty($button['image'])): ?>
+                                        <?php elseif (!empty($button['image'])) : ?>
                                             <?php echo $button['image']; ?>
-                                        <?php elseif (!empty($button['svg'])): ?>
+                                        <?php elseif (!empty($button['svg'])) : ?>
                                             <?php echo $button['svg']; ?>
                                         <?php endif; ?>
                                         <?php echo Text::_($button['label']) ?>
