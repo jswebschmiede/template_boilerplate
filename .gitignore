@@ -20,6 +20,9 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# PHP
+/vendor/
+
 # JS/CSS Build
 node_modules
 /build/assets_tmp
