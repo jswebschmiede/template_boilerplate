@@ -1,0 +1,43 @@
+{
+	"version": 1,
+	"settings": {
+		"color": {
+			"background": "#ffffff",
+			"foreground": "#000000",
+			"primary": "#D9000D",
+			"secondary": "#9C0008",
+			"accent": "#FF6901"
+		},
+		"typography": {
+			"fontFamily": {
+				"sans": "'Inter', sans-serif",
+				"faClassic": "'Font Awesome 7 Free'"
+			},
+			"fontSize": {
+				"xs": "0.75rem",
+				"sm": "0.875rem",
+				"base": "1rem",
+				"lg": "1.125rem",
+				"xl": "1.25rem",
+				"2xl": "1.5rem",
+				"3xl": "1.875rem",
+				"4xl": "2.25rem",
+				"5xl": "3rem",
+				"6xl": "3.75rem",
+				"7xl": "4.5rem",
+				"8xl": "6rem",
+				"9xl": "8rem"
+			}
+		},
+		"custom": {
+			"container": {
+				"full-p-1": "calc(100% - 2.5rem)",
+				"full-p-2": "calc(100% - 4rem)",
+				"content": "60rem",
+				"wide": "64rem",
+				"big": "90rem",
+				"site": "120rem"
+			}
+		}
+	}
+}

@@ -4,8 +4,68 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "128986010c3478ea8305e22b6b411930",
-    "packages": [],
+    "content-hash": "cd917d581bfbfdf6a17cd25cd975edaa",
+    "packages": [
+        {
+            "name": "ozdemirburak/iris",
+            "version": "4.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ozdemirburak/iris.git",
+                "reference": "280a7703851d698fa06a3f4e11df93a4a1de74ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ozdemirburak/iris/zipball/280a7703851d698fa06a3f4e11df93a4a1de74ba",
+                "reference": "280a7703851d698fa06a3f4e11df93a4a1de74ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.5|^11.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OzdemirBurak\\Iris\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Burak Özdemir",
+                    "homepage": "https://ozdemir.dev"
+                }
+            ],
+            "description": "PHP library for color manipulation and conversion.",
+            "homepage": "https://colorconverter.dev",
+            "keywords": [
+                "cmyk",
+                "color",
+                "conversion",
+                "hex",
+                "hexa",
+                "hsl",
+                "hsla",
+                "hsv",
+                "manipulation",
+                "oklch",
+                "rgb",
+                "rgba",
+                "transformation"
+            ],
+            "support": {
+                "issues": "https://github.com/ozdemirburak/iris/issues",
+                "source": "https://github.com/ozdemirburak/iris"
+            },
+            "time": "2026-08-03T09:57:36+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
@@ -96,5 +156,8 @@
         "php": ">=8.1"
     },
     "platform-dev": {},
+    "platform-overrides": {
+        "php": "8.3"
+    },
     "plugin-api-version": "2.6.0"
 }

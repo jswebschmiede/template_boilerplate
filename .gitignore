@@ -22,6 +22,7 @@ lerna-debug.log*
 
 # PHP
 /vendor/
+/src/vendor/
 
 # JS/CSS Build
 node_modules

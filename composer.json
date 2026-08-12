@@ -4,7 +4,8 @@
 	"type": "joomla-template",
 	"license": "MIT",
 	"require": {
-		"php": ">=8.1"
+		"php": ">=8.1",
+		"ozdemirburak/iris": "^4.1"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^3.10"
@@ -15,6 +16,10 @@
 		"php:lint:autofix": "phpcbf"
 	},
 	"config": {
+		"vendor-dir": "src/vendor",
+		"platform": {
+			"php": "8.3"
+		},
 		"sort-packages": true
 	}
 }

@@ -10,6 +10,7 @@
 	<authorEmail>info@your-site.de</authorEmail>
 	<authorUrl>http://your-site.de</authorUrl>
 	<description>TPL_TEMPLATE_BOILERPLATE_XML_DESCRIPTION</description>
+	<namespace path="src">JSch\Template\Boilerplate</namespace>
 	<inheritable>1</inheritable>
 
 	<files>
@@ -20,7 +21,10 @@
 		<filename>joomla.asset.json</filename>
 		<filename>offline.php</filename>
 		<filename>templateDetails.xml</filename>
+		<filename>theme.json</filename>
 		<folder>html</folder>
+		<folder>src</folder>
+		<folder>vendor</folder>
 	</files>
 
 	<media destination="templates/site/template_boilerplate"

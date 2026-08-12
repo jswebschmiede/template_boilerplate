@@ -12,8 +12,9 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Uri\Uri;
+use JSch\Template\Boilerplate\Site\Helper\ThemeHelper;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 
@@ -77,4 +78,11 @@ $wa = $this->getWebAssetManager();
 $wa->registerAndUseStyle('fontawesome', 'media/system/css/joomla-fontawesome.min.css');
 $wa->useStyle('template.boilerplate.app');
 $wa->useScript('template.boilerplate.app');
+
+$themeCss = ThemeHelper::buildRootStyles($this->template);
+
+if ($themeCss !== '') {
+    $wa->addInlineStyle($themeCss, [], [], ['template.boilerplate.app']);
+}
+
 $wa->addInlineScript('document.getElementsByTagName("html")[0].className += " js";', [], []);
