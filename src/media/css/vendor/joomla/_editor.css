@@ -1,12 +1,12 @@
-.btn-primary {
+a.btn-primary {
 	@apply btn btn-primary! hover:no-underline!;
 }
 
-.btn-outline {
+a.btn-outline {
 	@apply btn btn-outline! hover:no-underline!;
 }
 
-.btn-secondary {
+a.btn-secondary {
 	@apply btn btn-secondary! hover:no-underline!;
 }
 
@@ -32,4 +32,61 @@
 
 .text-danger {
 	@apply text-danger;
+}
+
+/**
+ * List styles for TinyMCE importcss.
+ * Use element.class selectors (not bare .class) so Formats applies the class
+ * to ul/ol instead of wrapping spans inside li.
+ */
+ul.list-checkmark {
+	@apply list-none pl-0;
+}
+
+ol.list-checkmark {
+	@apply list-none pl-0;
+}
+
+ul.list-checkmark > li,
+ol.list-checkmark > li {
+	@apply list-style list-checkmark;
+}
+
+ul.list-checkmark-bullet {
+	@apply list-none pl-0;
+}
+
+ol.list-checkmark-bullet {
+	@apply list-none pl-0;
+}
+
+ul.list-checkmark-bullet > li,
+ol.list-checkmark-bullet > li {
+	@apply list-style list-checkmark-bullet;
+}
+
+ul.list-info {
+	@apply list-none pl-0;
+}
+
+ol.list-info {
+	@apply list-none pl-0;
+}
+
+ul.list-info > li,
+ol.list-info > li {
+	@apply list-style list-info;
+}
+
+ul.list-circle {
+	@apply list-none pl-0;
+}
+
+ol.list-circle {
+	@apply list-none pl-0;
+}
+
+ul.list-circle > li,
+ol.list-circle > li {
+	@apply list-style list-circle;
 }
