@@ -1,15 +1,35 @@
-.primary-button > * {
-    @apply btn btn-primary hover:no-underline;
+.btn-primary {
+	@apply btn btn-primary! hover:no-underline!;
 }
 
-.outline-button > * {
-    @apply btn btn-outline hover:no-underline;
+.btn-outline {
+	@apply btn btn-outline! hover:no-underline!;
 }
 
-.secondary-button > * {
-    @apply btn btn-secondary hover:no-underline;
+.btn-secondary {
+	@apply btn btn-secondary! hover:no-underline!;
 }
 
-.color-primary {
-    @apply text-primary;
+.text-primary {
+	@apply text-primary;
+}
+
+.text-secondary {
+	@apply text-secondary;
+}
+
+.text-info {
+	@apply text-info;
+}
+
+.text-success {
+	@apply text-success;
+}
+
+.text-warning {
+	@apply text-warning;
+}
+
+.text-danger {
+	@apply text-danger;
 }

@@ -1,8 +1,15 @@
-.entry-content {
+.entry-content > *,
+body.mce-content-body > *,
+.mceContentBody > * {
 	@apply text-foreground text-base leading-relaxed lg:text-lg;
 }
 
-:is(.entry-content :not(:where([class~="not-entry-content"], [class~="not-entry-content"] *))) {
+:is(
+	.entry-content :not(:where([class~='not-entry-content'], [class~='not-entry-content'] *)),
+	body.mce-content-body
+		:not(:where([class~='not-entry-content'], [class~='not-entry-content'] *)),
+	.mceContentBody :not(:where([class~='not-entry-content'], [class~='not-entry-content'] *))
+) {
 	/* Strong */
 	&:where(strong) {
 		@apply font-semibold;

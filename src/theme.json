@@ -11,7 +11,7 @@
 		"typography": {
 			"fontFamily": {
 				"sans": "'Inter', sans-serif",
-				"faClassic": "'Font Awesome 7 Free'"
+				"faClassic": "'Font Awesome 6 Free'"
 			},
 			"fontSize": {
 				"xs": "0.75rem",

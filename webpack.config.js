@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const webpack = require('webpack');
 const chalk = require('chalk');
 const logSymbols = require('log-symbols');
@@ -172,6 +173,7 @@ module.exports = (env, argv) => {
         devtool: isProduction ? 'source-map' : 'eval-source-map',
         entry: {
             app: './src/media/js/app.js',
+            editor: './src/media/css/editor.css',
         },
         output: {
             filename: 'media/js/[name].bundle.js',
@@ -220,6 +222,7 @@ module.exports = (env, argv) => {
                         profile: isDebug,
                     }),
                 ]),
+            new RemoveEmptyScriptsPlugin(),
             new MiniCssExtractPlugin({
                 filename: 'media/css/[name].min.css',
             }),

@@ -1,0 +1,18 @@
+/**
+ * TinyMCE content CSS entry (Soltau-style).
+ *
+ * Compiles to editor.min.css. Uses theme + preflight + utilities with
+ * source(none) so only @apply / @utility from imported files are emitted —
+ * not the full scanned Tailwind utility dump.
+ */
+
+@import 'tailwindcss/theme';
+@import 'tailwindcss/preflight';
+@import 'tailwindcss/utilities' source(none);
+
+@import './vendor/theme.css';
+@import './vendor/fonts.css';
+@import './vendor/utilities.css';
+@import './vendor/custom.css';
+@import './vendor/joomla/_editor.css';
+@import './vendor/editor.css';
