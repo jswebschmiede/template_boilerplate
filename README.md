@@ -54,10 +54,10 @@ The goal is that design tokens from the template (colors, typography, containers
 ### How it works
 
 1. Edit tokens in [`src/theme.json`](src/theme.json) (WordPress-like structure under `settings`).
-2. [`ThemeHelper`](src/src/Helper/ThemeHelper.php) parses the JSON on each request and injects them via `$wa->addInlineStyle()` in [`logic.php`](src/logic.php).
-3. Emitted variables use the naming scheme `--tpl--style--global--{category}--{slug}` (e.g. `--tpl--style--global--color--primary`).
-4. Hex colors in `theme.json` are converted to `oklch(…)` at runtime (`ozdemirburak/iris` in `src/vendor`).
-5. [`src/media/css/vendor/theme.css`](src/media/css/vendor/theme.css) maps Tailwind `@theme` tokens to those variables with `var(--tpl--style--global--…)`.
+2. **Frontend (runtime):** [`ThemeHelper`](src/src/Helper/ThemeHelper.php) parses the JSON on each request and injects them via `$wa->addInlineStyle()` in [`logic.php`](src/logic.php). Hex colors are converted to `oklch(…)` with `ozdemirburak/iris`.
+3. **Editor (build-time):** [`scripts/theme-json-root.js`](scripts/theme-json-root.js) (PostCSS) reads the same `theme.json` and prepends `:root { --tpl--… }` into `editor.min.css` for TinyMCE’s iframe. Colors are converted with `culori` to the same `oklch(L% C H)` shape. Watch mode (`pnpm run dev`) rebuilds editor CSS when `theme.json` changes.
+4. Emitted variables use the naming scheme `--tpl--style--global--{category}--{slug}` (e.g. `--tpl--style--global--color--primary`).
+5. [`src/media/css/vendor/theme.css`](src/media/css/vendor/theme.css) maps Tailwind `@theme` tokens to those variables with `var(--tpl--style--global--…)` (no hardcoded value fallbacks — values come from PHP or the editor build).
 
 ### Usage in modules / components
 

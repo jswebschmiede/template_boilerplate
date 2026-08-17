@@ -226,6 +226,15 @@ module.exports = (env, argv) => {
             new MiniCssExtractPlugin({
                 filename: 'media/css/[name].min.css',
             }),
+            {
+                apply(compiler) {
+                    const themeJsonPath = path.resolve(__dirname, 'src/theme.json');
+
+                    compiler.hooks.afterCompile.tap('ThemeJsonWatchDependency', (compilation) => {
+                        compilation.fileDependencies.add(themeJsonPath);
+                    });
+                },
+            },
             new CopyPlugin({
                 patterns: copyPatterns,
             }),

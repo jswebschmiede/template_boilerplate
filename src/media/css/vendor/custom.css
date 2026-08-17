@@ -16,27 +16,27 @@ body.mce-content-body > *,
 	}
 
 	/* Headings */
-	&:where(h1) {
+	&:where(h1, .display-1) {
 		@apply mb-8 text-4xl font-semibold;
 	}
 
-	&:where(h2) {
+	&:where(h2, .display-2) {
 		@apply mb-8 text-3xl font-semibold;
 	}
 
-	&:where(h3) {
+	&:where(h3, .display-3) {
 		@apply mb-8 text-2xl font-semibold;
 	}
 
-	&:where(h4) {
+	&:where(h4, .display-4) {
 		@apply mb-8 text-xl font-semibold;
 	}
 
-	&:where(h5) {
+	&:where(h5, .display-5) {
 		@apply mb-8 text-lg font-semibold;
 	}
 
-	&:where(h6) {
+	&:where(h6, .display-6) {
 		@apply mb-8 text-base font-semibold;
 	}
 
@@ -47,6 +47,9 @@ body.mce-content-body > *,
 	/* Paragraphs */
 	&:where(p) {
 		@apply mt-6 mb-6;
+	}
+	&:where(p.lead) {
+		@apply text-lg;
 	}
 
 	&:where(p:last-child) {

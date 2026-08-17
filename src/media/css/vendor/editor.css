@@ -2,9 +2,8 @@
  * TinyMCE iframe-only styles (loaded via editor.min.css).
  */
 
-body.mce-content-body,
-.mceContentBody {
-	@apply bg-background text-foreground font-sans antialiased p-4;
+:is(body.mce-content-body, .mceContentBody) {
+	@apply bg-white text-foreground font-sans antialiased p-4;
 }
 
 hr#system-readmore {

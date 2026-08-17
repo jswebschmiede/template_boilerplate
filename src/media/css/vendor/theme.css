@@ -1,31 +1,31 @@
 @theme {
-	--color-background: var(--tpl--style--global--color--background, #ffffff);
-	--color-foreground: var(--tpl--style--global--color--foreground, #000000);
-	--color-primary: var(--tpl--style--global--color--primary, #d9000d);
-	--color-secondary: var(--tpl--style--global--color--secondary, #9c0008);
-	--color-accent: var(--tpl--style--global--color--accent, #ff6901);
+	--color-background: var(--tpl--style--global--color--background);
+	--color-foreground: var(--tpl--style--global--color--foreground);
+	--color-primary: var(--tpl--style--global--color--primary);
+	--color-secondary: var(--tpl--style--global--color--secondary);
+	--color-accent: var(--tpl--style--global--color--accent);
 
-	--font-sans: var(--tpl--style--global--font-family--sans, 'Inter', sans-serif);
-	--font-fa-classic: var(--tpl--style--global--font-family--fa-classic, 'Font Awesome 6 Free');
+	--font-sans: var(--tpl--style--global--font-family--sans);
+	--font-fa-classic: var(--tpl--style--global--font-family--fa-classic);
 
-	--text-xs: var(--tpl--style--global--font-size--xs, 0.75rem);
-	--text-sm: var(--tpl--style--global--font-size--sm, 0.875rem);
-	--text-base: var(--tpl--style--global--font-size--base, 1rem);
-	--text-lg: var(--tpl--style--global--font-size--lg, 1.125rem);
-	--text-xl: var(--tpl--style--global--font-size--xl, 1.25rem);
-	--text-2xl: var(--tpl--style--global--font-size--2xl, 1.5rem);
-	--text-3xl: var(--tpl--style--global--font-size--3xl, 1.875rem);
-	--text-4xl: var(--tpl--style--global--font-size--4xl, 2.25rem);
-	--text-5xl: var(--tpl--style--global--font-size--5xl, 3rem);
-	--text-6xl: var(--tpl--style--global--font-size--6xl, 3.75rem);
-	--text-7xl: var(--tpl--style--global--font-size--7xl, 4.5rem);
-	--text-8xl: var(--tpl--style--global--font-size--8xl, 6rem);
-	--text-9xl: var(--tpl--style--global--font-size--9xl, 8rem);
+	--text-xs: var(--tpl--style--global--font-size--xs);
+	--text-sm: var(--tpl--style--global--font-size--sm);
+	--text-base: var(--tpl--style--global--font-size--base);
+	--text-lg: var(--tpl--style--global--font-size--lg);
+	--text-xl: var(--tpl--style--global--font-size--xl);
+	--text-2xl: var(--tpl--style--global--font-size--2xl);
+	--text-3xl: var(--tpl--style--global--font-size--3xl);
+	--text-4xl: var(--tpl--style--global--font-size--4xl);
+	--text-5xl: var(--tpl--style--global--font-size--5xl);
+	--text-6xl: var(--tpl--style--global--font-size--6xl);
+	--text-7xl: var(--tpl--style--global--font-size--7xl);
+	--text-8xl: var(--tpl--style--global--font-size--8xl);
+	--text-9xl: var(--tpl--style--global--font-size--9xl);
 
-	--container-full-p-1: var(--tpl--style--global--container--full-p-1, calc(100% - 2.5rem));
-	--container-full-p-2: var(--tpl--style--global--container--full-p-2, calc(100% - 4rem));
-	--container-content: var(--tpl--style--global--container--content, 60rem); /* 960px */
-	--container-wide: var(--tpl--style--global--container--wide, 64rem); /* 1024px */
-	--container-big: var(--tpl--style--global--container--big, 90rem); /* 1440px */
-	--container-site: var(--tpl--style--global--container--site, 120rem); /* 1920px */
+	--container-full-p-1: var(--tpl--style--global--container--full-p-1);
+	--container-full-p-2: var(--tpl--style--global--container--full-p-2);
+	--container-content: var(--tpl--style--global--container--content); /* 960px */
+	--container-wide: var(--tpl--style--global--container--wide); /* 1024px */
+	--container-big: var(--tpl--style--global--container--big); /* 1440px */
+	--container-site: var(--tpl--style--global--container--site); /* 1920px */
 }
