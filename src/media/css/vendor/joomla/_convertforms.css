@@ -1,141 +1,161 @@
 fieldset + fieldset {
-    @apply mt-8;
-}
-
-.convertforms {
-    --color-primary: theme('colors.primary') !important;
-    --color-secondary: theme('colors.secondary') !important;
-    --color-accent: theme('colors.accent') !important;
-
-    @apply max-w-3xl mx-auto;
-}
-
-.convertforms .cf-fields {
-    @apply md:grid grid-cols-12 gap-4;
-}
-
-.convertforms .cf-control-group {
-    @apply mb-4 last:mb-0 col-span-12;
-}
-
-.convertforms .cf-control-group.cf-one-half {
-    @apply col-span-6;
-}
-.convertforms .cf-control-group.cf-one-third {
-    @apply col-span-4;
-}
-
-.convertforms .cf-control-group .cf-label {
-    @apply block mb-1;
-}
-.convertforms .cf-checkbox-group .cf-label p {
-    @apply -mt-[1.7rem] leading-[var(--checkbox-radio-line-height)];
-
-    a {
-        @apply underline;
-    }
+	@apply mt-8;
 }
 
 .form-select,
 .form-control:not([type='checkbox']):not([type='radio']),
 .convertforms .cf-input:not([type='checkbox']):not([type='radio']) {
-    @apply block w-full px-3 py-2.5 rounded-lg placeholder-primary/90 bg-white border border-primary/25 shadow-md appearance-none focus:outline-none focus:ring-1 focus:ring-secondary focus:border-secondary;
+	@apply block w-full px-3 py-2.5 rounded-lg placeholder-foreground/90 bg-white border border-primary/25 appearance-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary;
+}
+
+.form-select {
+	--select-arrow-size: 16px;
+
+	@apply pr-10 bg-no-repeat bg-size-(--select-arrow-size) bg-position-[right_0.75rem_center];
+
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='m3.5 6 4.5 4.5L12.5 6'/%3E%3C/svg%3E");
+
+	&:open {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='m3.5 10 4.5-4.5L12.5 10'/%3E%3C/svg%3E");
+	}
+}
+
+.file-input {
+	@apply cursor-pointer px-0! py-0!;
+
+	&::file-selector-button {
+		@apply btn btn-primary mr-8;
+	}
+}
+
+.convertforms {
+	--color-primary: var(--tpl--style--global--color--primary) !important;
+	--color-secondary: var(--tpl--style--global--color--secondary) !important;
+	--color-accent: var(--tpl--style--global--color--accent) !important;
+
+	@apply max-w-3xl mx-auto;
+}
+
+.convertforms .cf-fields {
+	@apply md:grid grid-cols-12 gap-4;
+}
+
+.convertforms .cf-control-group {
+	@apply mb-4 last:mb-0 col-span-12;
+}
+
+.convertforms .cf-control-group.cf-one-half {
+	@apply col-span-6;
+}
+.convertforms .cf-control-group.cf-one-third {
+	@apply col-span-4;
+}
+
+.convertforms .cf-control-group .cf-label {
+	@apply block mb-1;
+}
+.convertforms .cf-checkbox-group .cf-label p {
+	@apply -mt-[1.7rem] leading-[var(--checkbox-radio-line-height)];
+
+	a {
+		@apply underline;
+	}
 }
 
 .convertforms .cf-btn,
 .convertforms button[type='submit'] {
-    @apply btn btn-outline;
+	@apply btn btn-outline;
 }
 
 .convertforms .cf-text-right {
-    @apply text-right;
+	@apply text-right;
 }
 
 .convertforms .captcha-container {
-    @apply flex gap-2 items-center;
+	@apply flex gap-2 items-center;
 }
 
 .convertforms .captcha-equation {
-    @apply shrink-0;
+	@apply shrink-0;
 }
 
 .convertforms .cf-required-label {
-    @apply text-red-500;
+	@apply text-red-500;
 }
 
 /* Response */
 .convertforms.cf-success.cf-success-hideform .cf-response {
-    @apply mb-0;
+	@apply mb-0;
 }
 .convertforms.cf-success.cf-success-hideform .cf-fields,
 .convertforms.cf-success.cf-success-hideform .cf-footer {
-    @apply hidden;
+	@apply hidden;
 }
 .convertforms.cf-success.cf-success-hidetext .cf-content-wrap {
-    @apply hidden;
+	@apply hidden;
 }
 .convertforms .cf-response {
-    @apply mb-12 rounded-lg p-6 w-full text-center hidden;
+	@apply mb-12 rounded-lg p-6 w-full text-center hidden;
 }
 .convertforms .cf-response p {
-    @apply m-0 p-0;
+	@apply m-0 p-0;
 }
 
 .convertforms.cf-success .cf-response {
-    @apply bg-green-500 text-white block;
+	@apply bg-green-500 text-white block;
 }
 .convertforms.cf-error .cf-response {
-    @apply bg-red-500 text-white block;
+	@apply bg-red-500 text-white block;
 }
 
 /* Spinner */
 .convertforms .cf-spinner-container {
-    @apply invisible absolute flex items-center justify-center w-full h-full text-[10px] left-0 top-0;
+	@apply invisible absolute flex items-center justify-center w-full h-full text-[10px] left-0 top-0;
 }
 .convertforms.cf-working .cf-spinner-container {
-    @apply visible;
+	@apply visible;
 }
 .convertforms.cf-working .cf-btn-text {
-    @apply invisible;
+	@apply invisible;
 }
 .convertforms .cf-spinner > span {
-    @apply w-2.5 h-2.5 bg-current inline-block animate-[cf-bouncedelay_1s_infinite_ease-in-out_both] mx-[3px] my-0 rounded-[100%];
+	@apply w-2.5 h-2.5 bg-current inline-block animate-[cf-bouncedelay_1s_infinite_ease-in-out_both] mx-[3px] my-0 rounded-[100%];
 }
 .convertforms .cf-spinner .bounce1 {
-    @apply [animation-delay:-0.32s];
+	@apply [animation-delay:-0.32s];
 }
 .convertforms .cf-spinner .bounce2 {
-    @apply [animation-delay:-0.16s];
+	@apply [animation-delay:-0.16s];
 }
 
 /* Recaptcha */
 .convertforms .cf-recaptcha-v3-text-badge {
-    @apply text-[11px] text-[#999] m-0;
+	@apply text-[11px] text-[#999] m-0;
 }
 .convertforms .cf-recaptcha-v3-text-badge a {
-    @apply text-[#999] no-underline hover:underline;
+	@apply text-[#999] no-underline hover:underline;
 }
 
 /* Animation */
 @-webkit-keyframes cf-bouncedelay {
-    0%,
-    80%,
-    100% {
-        -webkit-transform: scale(0);
-    }
-    40% {
-        -webkit-transform: scale(1);
-    }
+	0%,
+	80%,
+	100% {
+		-webkit-transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+	}
 }
 @keyframes cf-bouncedelay {
-    0%,
-    80%,
-    100% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-    }
-    40% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
+	0%,
+	80%,
+	100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
 }

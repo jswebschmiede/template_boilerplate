@@ -162,7 +162,7 @@
 }
 
 @utility list-style {
-	@apply list-none relative ps-7 lg:ps-8 before:absolute before:start-0 before:top-1/2 before:-translate-y-1/2 before:font-fa-classic before:leading-loose before:text-primary before:text-sm lg:before:text-base before:font-black;
+	@apply list-none relative ps-7 lg:ps-8 before:absolute before:start-0 before:top-0 before:font-fa-classic before:leading-7 before:text-primary before:text-sm lg:before:text-base before:font-black;
 }
 
 @utility list-checkmark {
