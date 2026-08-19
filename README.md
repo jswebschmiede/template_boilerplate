@@ -47,6 +47,17 @@ Template Boilerplate is a base template for Joomla, serving as a starting point 
     composer install --no-dev
     ```
 
+## Rename the template
+
+Replace every `boilerplate` placeholder (namespaces, language keys, Webpack paths, package names) with your template slug. Hyphens become underscores (`acme-shop` → `acme_shop`). The slug **is** the Joomla template name — there is no `template_` prefix.
+
+```
+pnpm rename -- acmeshop
+pnpm rename -- acmeshop --dry-run
+```
+
+Language files such as `tpl_template_boilerplate.ini` are renamed to `tpl_acmeshop.ini`. The project folder is not renamed; rename `template_boilerplate` to `acmeshop` afterwards.
+
 ## theme.json
 
 The goal is that design tokens from the template (colors, typography, containers, …) are available as global CSS custom properties on `:root`. Modules and components can reuse the same variables so frontend styling stays consistent with the active template theme.

@@ -5,7 +5,8 @@
 	"scripts": {
 		"build": "webpack --mode production",
 		"dev": "webpack --mode development --watch",
-		"dev:debug": "WEBPACK_DEBUG=1 webpack --mode development --progress"
+		"dev:debug": "WEBPACK_DEBUG=1 webpack --mode development --progress",
+		"rename": "node scripts/rename-template.js"
 	},
 	"keywords": [],
 	"author": "",
