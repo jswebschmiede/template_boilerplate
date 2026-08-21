@@ -6,8 +6,6 @@
  * not the full scanned Tailwind utility dump.
  */
 
-@import '../../../../../joomla/media/system/css/joomla-fontawesome.min.css';
-
 @import 'tailwindcss/theme';
 @import 'tailwindcss/preflight';
 @import 'tailwindcss/utilities' source(none);

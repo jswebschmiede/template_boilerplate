@@ -1,4 +1,20 @@
 /**
+ * Font Awesome webfont for editor list pseudo-icons only.
+ *
+ * Solid weight 900 is required by list-style utilities (before:font-black).
+ * Do not add .fa-* class rules here — TinyMCE importcss would expose them
+ * in the Formats menu.
+ */
+@font-face {
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	font-weight: 900;
+	font-display: block;
+	src: url('../../../../../../joomla/media/vendor/fontawesome-free/webfonts/fa-solid-900.woff2')
+		format('woff2');
+}
+
+/**
  * TinyMCE iframe-only styles (loaded via editor.min.css).
  */
 
