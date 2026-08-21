@@ -196,7 +196,12 @@ module.exports = (env, argv) => {
                         {
                             loader: 'css-loader',
                             options: {
-                                url: false,
+                                // Tailwind/PostCSS may inline joomla-fontawesome into editor.css, so
+                                // match Font Awesome webfont URLs instead of the source CSS file path.
+                                url: {
+                                    filter: (assetUrl) =>
+                                        /media\/vendor\/fontawesome-free\/webfonts\//.test(assetUrl),
+                                },
                             },
                         },
                         {
@@ -209,6 +214,10 @@ module.exports = (env, argv) => {
                             },
                         },
                     ],
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                    type: 'asset/inline',
                 },
             ],
         },
