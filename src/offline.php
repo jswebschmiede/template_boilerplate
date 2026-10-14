@@ -81,9 +81,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
                             <input name="password" class="mb-4 form-input" id="password" type="password">
 
                             <?php foreach ($extraButtons as $button) :
-                                $dataAttributeKeys = array_filter(array_keys($button), function ($key) {
-                                    return substr($key, 0, 5) == 'data-';
-                                });
+                                $dataAttributeKeys = array_filter(array_keys($button), fn($key) => str_starts_with($key, 'data-'));
                                 ?>
                                 <div class="mb-4">
                                     <button type="button" class="btn btn-primary <?php echo $button['class'] ?? '' ?>" <?php foreach ($dataAttributeKeys as $key) :

@@ -8,12 +8,21 @@
 		"ozdemirburak/iris": "^4.1"
 	},
 	"require-dev": {
+		"rector/rector": "^2.0",
 		"squizlabs/php_codesniffer": "^3.10"
 	},
 	"scripts": {
-		"php:lint": "phpcs -p -s",
-		"php:lint:errors": "phpcs -p -s --runtime-set ignore_warnings_on_exit 1",
-		"php:lint:autofix": "phpcbf"
+		"php:lint": "bash -O nullglob -c 'src/vendor/bin/phpcs -p -s src ../mod_*/src ../plg_*/src'",
+		"php:lint:errors": "bash -O nullglob -c 'src/vendor/bin/phpcs -p -s --runtime-set ignore_warnings_on_exit 1 src ../mod_*/src ../plg_*/src'",
+		"php:lint:autofix": "bash -O nullglob -c 'src/vendor/bin/phpcbf src ../mod_*/src ../plg_*/src'",
+		"php:rector": "src/vendor/bin/rector process --dry-run",
+		"php:rector:fix": "src/vendor/bin/rector process",
+		"php:rector:clear-cache": "src/vendor/bin/rector clear-cache",
+		"php:rector:fix:lint": [
+			"@php:rector:fix",
+			"bash -O nullglob -c 'src/vendor/bin/phpcbf src ../mod_*/src ../plg_*/src || true'",
+			"@php:lint"
+		]
 	},
 	"config": {
 		"vendor-dir": "src/vendor",

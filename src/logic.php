@@ -36,7 +36,7 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 
 // menu
 $menu = $app->getMenu()->getActive();
-$pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
+$pageclass = $menu?->getParams()->get('pageclass_sfx', '') ?? '';
 
 // template params
 $templateparams = $app->getTemplate(true)->params;
