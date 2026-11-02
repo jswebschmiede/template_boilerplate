@@ -131,9 +131,20 @@ class StickyHeader {
     this.headerHeight = this.element.offsetHeight;
   }
 
+  /**
+   * Sets body padding to the header height plus the admin bar when visible.
+   *
+   * @return {void}
+   */
   setHeaderHeight() {
     const body = document.querySelector("body");
-    body.style.paddingTop = `${this.headerHeight}px`;
+    const adminBar = document.querySelector(".adminbar");
+    const adminBarHeight =
+      body.classList.contains("has-adminbar") && adminBar
+        ? adminBar.offsetHeight
+        : 0;
+
+    body.style.paddingTop = `${this.headerHeight + adminBarHeight}px`;
   }
 }
 

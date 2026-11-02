@@ -1,0 +1,48 @@
+:root {
+	--adminbar-height: 2.5rem;
+}
+
+.adminbar {
+	@apply fixed top-0 inset-x-0 z-50 h-(--adminbar-height) bg-zinc-900 text-zinc-100 text-sm;
+}
+
+.adminbar__list {
+	@apply flex items-stretch m-0 p-0 h-full list-none max-w-site mx-auto;
+}
+
+.adminbar__item {
+	@apply m-0 p-0;
+}
+
+.adminbar__link {
+	@apply inline-flex items-center gap-2 h-(--adminbar-height) px-3 text-zinc-100 no-underline hover:bg-zinc-800 hover:text-white hover:no-underline focus-visible:outline-2 focus-visible:outline-white focus-visible:-outline-offset-2;
+}
+
+.adminbar__icon {
+	@apply w-4 h-4 block shrink-0;
+}
+
+.adminbar__label {
+	@apply whitespace-nowrap;
+}
+
+@media (max-width: 419px) {
+	.adminbar__label {
+		@apply sr-only;
+	}
+}
+
+@layer utilities {
+	body.has-adminbar {
+		padding-top: var(--adminbar-height);
+		--f-header-offset: var(--adminbar-height);
+	}
+
+	body.has-adminbar .f-header {
+		top: var(--adminbar-height);
+	}
+
+	body.has-adminbar .f-header--sticky.is-sticky {
+		top: var(--adminbar-height) !important;
+	}
+}

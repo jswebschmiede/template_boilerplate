@@ -37,8 +37,11 @@ $errorCode = $this->error->getCode();
         . ($task ? ' task-' . $task : ' no-task')
         . ($itemid ? ' itemid-' . $itemid : '')
         . ($pageclass ? ' ' . $pageclass : '')
-        . ($this->direction == 'rtl' ? ' rtl' : '');
+        . ($this->direction == 'rtl' ? ' rtl' : '')
+        . ($hasAdminBar ? ' has-adminbar' : '');
     ?>">
+
+        <?php echo LayoutHelper::render('template.adminbar'); ?>
 
         <?php if ($templateparams["pagePreloader"] == 1) : ?>
             <?php echo LayoutHelper::render('tempalte.preloader'); ?>

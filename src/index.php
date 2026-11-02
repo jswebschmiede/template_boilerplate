@@ -36,13 +36,16 @@ require(JPATH_THEMES . '/' . $this->template . '/logic.php');
         . ($task ? ' task-' . $task : ' no-task')
         . ($itemid ? ' itemid-' . $itemid : '')
         . ($pageclass ? ' ' . $pageclass : '')
-        . ($this->direction == 'rtl' ? ' rtl' : '');
+        . ($this->direction == 'rtl' ? ' rtl' : '')
+        . ($hasAdminBar ? ' has-adminbar' : '');
     ?>">
 
         <a href="#main-content"
             class="sr-only-focusable focus:not-sr-only inline-block focus:top-4 focus:left-4 z-50 focus:!absolute bg-white px-6 py-4 rounded text-black">
             <?php echo Text::_("TPL_TEMPLATE_BOILERPLATE_JUMPTOCONTENT"); ?>
         </a>
+
+        <?php echo LayoutHelper::render('template.adminbar'); ?>
 
         <?php if ($templateparams["pagePreloader"] == 1) : ?>
             <?php echo LayoutHelper::render('template.preloader'); ?>

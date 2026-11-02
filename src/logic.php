@@ -22,7 +22,8 @@ use JSch\Template\Boilerplate\Site\Helper\ThemeHelper;
 $tpath = $this->baseurl . 'templates/' . $this->template;
 
 /** @var Joomla\CMS\Application\SiteApplication $app */
-$app = Factory::getApplication();
+$app         = Factory::getApplication();
+$hasAdminBar = ThemeHelper::shouldShowAdminBar();
 
 // Detecting Active Variables
 $option = $app->input->getCmd('option', '');
